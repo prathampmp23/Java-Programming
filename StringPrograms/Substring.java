@@ -1,4 +1,4 @@
-package String;
+package StringPrograms;
 
 public class Substring {
     public static String Printsubstring(String str, int si , int ei){

@@ -1,4 +1,4 @@
-package String;
+package StringPrograms;
 import java.util.Arrays;
 public class Anagrams {
     public static void main(String args[]){

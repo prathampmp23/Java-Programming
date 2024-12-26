@@ -1,4 +1,4 @@
-package String;
+package StringPrograms;
 
 public class UppercaseString {
     public static String UpperCase(String str){

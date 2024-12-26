@@ -1,4 +1,4 @@
-package String;
+package StringPrograms;
 
 public class Compression {
     public static String compression(String str){

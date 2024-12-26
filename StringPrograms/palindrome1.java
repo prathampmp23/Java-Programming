@@ -1,4 +1,4 @@
-package String;
+package StringPrograms;
 import java.util.*;
 public class palindrome1 {
 

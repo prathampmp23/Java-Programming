@@ -15,5 +15,13 @@ public class Hello {
         }
         System.out.println("sum of n even number :" + sum);
         sc.close();
+
+        outerLoop:   //table for outer loop
+        for (int i = 0; i < args.length; i++) {
+            for (int j = 0; j < args.length; j++) {
+             if(i == 3) break outerLoop; //break outer loop
+                System.out.println(args[i] + " " + args[j]);  
+            }
+        }
     }
 }

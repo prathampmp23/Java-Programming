@@ -1,4 +1,4 @@
-package String;
+package StringPrograms;
 
 public class Strings {
         public static void main(String args[]){
