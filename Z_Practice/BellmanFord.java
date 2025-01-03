@@ -1,3 +1,4 @@
+package Z_Practice;
 class Graph {
     class Edge {
         int src, dest, weight;

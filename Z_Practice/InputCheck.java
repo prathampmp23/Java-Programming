@@ -1,3 +1,4 @@
+package Z_Practice;
 import java.util.Scanner;
 // import java.util.InputMismatchException;
 

@@ -1,3 +1,4 @@
+package Z_Practice;
 import java.util.Scanner;
 
 class Flip_Flop_Array {

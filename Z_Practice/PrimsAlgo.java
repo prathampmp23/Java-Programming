@@ -1,3 +1,4 @@
+package Z_Practice;
 class PrimsAlgo {
 
     private static final int V = 5;

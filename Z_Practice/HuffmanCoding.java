@@ -1,3 +1,4 @@
+package Z_Practice;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 

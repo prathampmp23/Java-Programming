@@ -1,6 +1,7 @@
+package Z_Practice;
 import java.util.*;
 
-public class Test {
+public class Arrays1D {
     public static void linearSearch(int arr[], int key) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
