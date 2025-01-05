@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays1D;
 import java.util.*;
 public class Sorting {
     // The first three sorting algorithms has same code complexity of O(n2)

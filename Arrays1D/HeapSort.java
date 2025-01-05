@@ -1,10 +1,9 @@
-package Arrays;
+package Arrays1D;
 
 // Java program for implementation of Heap Sort
 
 public class HeapSort {
-	public void sort(int arr[])
-	{
+	public void sort(int arr[]) {
 		int N = arr.length;
 
 		// Build heap (rearrange array)
@@ -25,8 +24,7 @@ public class HeapSort {
 
 	// To heapify a subtree rooted with node i which is
 	// an index in arr[]. n is size of heap
-	void heapify(int arr[], int N, int i)
-	{
+	void heapify(int arr[], int N, int i) {
 		int largest = i; // Initialize largest as root
 		int l = 2 * i + 1; // left = 2*i + 1
 		int r = 2 * i + 2; // right = 2*i + 2
@@ -51,8 +49,7 @@ public class HeapSort {
 	}
 
 	/* A utility function to print array of size n */
-	static void printArray(int arr[])
-	{
+	static void printArray(int arr[]) {
 		int N = arr.length;
 		for (int i = 0; i < N; ++i)
 			System.out.print(arr[i] + " ");
@@ -60,8 +57,7 @@ public class HeapSort {
 	}
 
 	// Driver's code
-	public static void main(String args[])
-	{
+	public static void main(String args[]) {
 		int arr[] = { 12, 11, 13, 5, 6, 7 };
 		// Function call
 		HeapSort ob = new HeapSort();

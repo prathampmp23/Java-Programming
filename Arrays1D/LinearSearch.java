@@ -1,7 +1,7 @@
-package Arrays;
+package Arrays1D;
 import java.util.*;
 
-public class LinearSearchFun {
+public class LinearSearch {
 
     public static int LinearSearch(int num[] , int x) {
         for(int i=0;i<num.length;i++){
