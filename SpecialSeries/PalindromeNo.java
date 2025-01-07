@@ -1,7 +1,7 @@
-package Z_Practice;
+package SpecialSeries;
 import java.util.Scanner;
 
-public class FunExample {
+public class PalindromeNo {
 
     public static boolean palindrome(int num) {
         int number = num;

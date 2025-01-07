@@ -1,4 +1,4 @@
-package Z_Practice;
+package Arrays1D;
 public class BasicArray {
     public static void main(String args[]) {
         int values[] = new int[5];

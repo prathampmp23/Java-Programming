@@ -93,9 +93,9 @@ public class Sorting {
             arr[i] = sc.nextInt();
         }
         sc.close();
-        // BubblesSort(arr);
-        // SelectionSort(arr);
-        // InsertionSort(arr);
+        BubblesSort(arr);
+        SelectionSort(arr);
+        InsertionSort(arr);
         CountingSort(arr);
         printArray(arr);
     }

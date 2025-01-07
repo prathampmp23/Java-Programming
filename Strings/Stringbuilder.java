@@ -1,4 +1,4 @@
-package StringPrograms;
+package Strings;
 
 public class Stringbuilder {
     public static void main(String args[]){

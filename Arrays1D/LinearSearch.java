@@ -3,7 +3,7 @@ import java.util.*;
 
 public class LinearSearch {
 
-    public static int LinearSearch(int num[] , int x) {
+    public static int linearSearch(int num[] , int x) {
         for(int i=0;i<num.length;i++){
             if(num[i] == x){
                 return i;
@@ -23,7 +23,7 @@ public class LinearSearch {
         System.out.println("Enter the element to search :");
         int x = sc.nextInt();
         sc.close();
-        int Search = LinearSearch(num,x);
+        int Search = linearSearch(num,x);
         if( Search == -1){
             System.out.println("Number is  not found");
         } else{

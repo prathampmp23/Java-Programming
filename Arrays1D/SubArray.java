@@ -89,7 +89,7 @@ public class SubArray {
         sc.close();
         subArray(num);
         MaxsubArraySum(num);
-        // PrefixSum(num);
-        // KadanesSum(num);
+        PrefixSum(num);
+        KadanesSum(num);
     }
 }

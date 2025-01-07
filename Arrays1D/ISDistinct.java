@@ -2,7 +2,7 @@ package Arrays1D;
 
 import java.util.HashSet;
 
-public class ISDistinct {
+public class IsDistinct {
     public static boolean isDistinct(int num[]) {
         for (int i = 0; i < num.length; i++) {
             for (int j = i + 1; j < num.length; j++) {
