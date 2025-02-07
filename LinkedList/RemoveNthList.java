@@ -4,52 +4,54 @@ public class RemoveNthList {
     public static class Node {
         int data;
         Node next;
+
         public Node(int data) {
             this.data = data;
             this.next = null;
         }
     }
+
     public static Node head;
     public static Node tail;
 
     public void addFirst(int data) {
         Node newNode = new Node(data);
-        if(head == null){
+        if (head == null) {
             head = tail = newNode;
             return;
         }
-        newNode.next = head; //linking
+        newNode.next = head; // linking
         head = newNode;
     }
 
     public void addLast(int data) {
         Node newNode = new Node(data);
-        if(head == null){
+        if (head == null) {
             head = tail = newNode;
             return;
         }
-        tail.next = newNode; //linking
+        tail.next = newNode; // linking
         tail = newNode;
     }
-    
+
     public void deleteNthfromEnd(int n) {
-        //calculate size
+        // calculate size
         int Size = 0;
         Node temp = head;
-        while(temp != null){
+        while (temp != null) {
             temp = temp.next;
             Size++;
         }
-        if(Size == n){
-            head = head.next;   //remove first
+        if (Size == n) {
+            head = head.next; // remove first
             return;
         }
 
-        //size-n
+        // size-n
         int i = 1;
-        int idxtoFind = Size-n;
+        int idxtoFind = Size - n;
         Node prev = head;
-        while(i < idxtoFind){
+        while (i < idxtoFind) {
             prev = prev.next;
             i++;
         }
@@ -58,13 +60,13 @@ public class RemoveNthList {
     }
 
     public void printList() {
-        if(head == null) {
+        if (head == null) {
             System.out.println("Linkedlist is empty");
             return;
         }
         Node temp = head;
-        while(temp != null) {
-            System.out.print(temp.data+" ");
+        while (temp != null) {
+            System.out.print(temp.data + " ");
             temp = temp.next;
         }
         System.out.println("->null");

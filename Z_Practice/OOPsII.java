@@ -1,5 +1,5 @@
 package Z_Practice;
-public class OOPs {
+public class OOPsII {
     public static void main(String[] args) {
         // OOPs concepts
         Dog D1 = new Dog();

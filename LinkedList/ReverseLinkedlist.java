@@ -4,43 +4,46 @@ public class ReverseLinkedlist {
     public static class Node {
         int data;
         Node next;
+
         public Node(int data) {
             this.data = data;
             this.next = null;
         }
     }
+
     public static Node head;
     public static Node tail;
 
     public void addFirst(int data) {
         Node newNode = new Node(data);
-        if(head == null){
+        if (head == null) {
             head = tail = newNode;
             return;
         }
-        newNode.next = head; //linking
+        newNode.next = head; // linking
         head = newNode;
     }
 
     public void addLast(int data) {
         Node newNode = new Node(data);
-        if(head == null){
+        if (head == null) {
             head = tail = newNode;
             return;
         }
-        tail.next = newNode; //linking
+        tail.next = newNode; // linking
         tail = newNode;
     }
-    
+
     public void reverse() {
-        //To reverse a linkedlist there are 
-        //3 variables
-        //and 4 step in loop
+        // To reverse a linkedlist there are
+        // ** 3 variables
+        // ** 4 step in loop
+
         Node prev = null;
         Node curr = tail = head;
         Node next;
-
-        while(curr != null){
+        
+        while (curr != null) {
             next = curr.next;
             curr.next = prev;
             prev = curr;
@@ -50,13 +53,13 @@ public class ReverseLinkedlist {
     }
 
     public void printList() {
-        if(head == null) {
+        if (head == null) {
             System.out.println("Linkedlist is empty");
             return;
         }
         Node temp = head;
-        while(temp != null) {
-            System.out.print(temp.data+" ");
+        while (temp != null) {
+            System.out.print(temp.data + " ");
             temp = temp.next;
         }
         System.out.println("->null");

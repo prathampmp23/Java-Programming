@@ -47,6 +47,7 @@ public class RecursiveSearch {
 
         return index+1;
     }
+    // recursive search
     public int recursiveSearch(int key) {
         return helperFun(head, key);
     }
