@@ -249,6 +249,28 @@ public class Arrays1D {
         return trapedWater;
     }
 
+    public static int trappedWater2(int[] height) {
+        int n = height.length;
+    
+        int totalWater = 0;
+        int left = 0, right = n - 1;
+        int rightMax = height[right], leftMax = height[left];
+    
+        while (left < right) {
+            if (leftMax < rightMax) {
+                left++;
+                leftMax = Math.max(leftMax, height[left]);
+                totalWater += leftMax - height[left];
+            } else {
+                right--;
+                rightMax = Math.max(rightMax, height[right]);
+                totalWater += rightMax - height[right];
+            }
+        }
+        
+        return totalWater;
+    }
+
     // Buy and Sell Stock
     public static int buyAndSellStock(int salePrice[]) {
         int buyPrice = Integer.MAX_VALUE;

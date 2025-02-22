@@ -34,6 +34,29 @@ public class TrappedWater {
         return trappedwater;
     }
 
+    public static int trappedWater2(int[] height) {
+        int n = height.length;
+    
+        int totalWater = 0;
+        int left = 0, right = n - 1;
+        int rightMax = height[right], leftMax = height[left];
+    
+        while (left < right) {
+            if (leftMax < rightMax) {
+                left++;
+                leftMax = Math.max(leftMax, height[left]);
+                totalWater += leftMax - height[left];
+            } else {
+                right--;
+                rightMax = Math.max(rightMax, height[right]);
+                totalWater += rightMax - height[right];
+            }
+        }
+        
+        return totalWater;
+    }
+    
+
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size :");
@@ -45,5 +68,6 @@ public class TrappedWater {
         }
         sc.close();
         System.out.println("Total volume of trapped Water is :" + trappedWater(height));
+        System.out.println("Total volume of trapped Water is :" + trappedWater2(height));
     }
 }
