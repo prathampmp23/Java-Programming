@@ -3,14 +3,14 @@ package Stack;
 import java.util.*;
 
 public class PushAtBottom {
-    public static void puchAtBottom(Stack<Integer> s, int data) {
+    public static void pushAtBottom(Stack<Integer> s, int data) {
         if(s.isEmpty()) {
             // if stack is made empty or empty then push data 
             s.push(data);
             return;
         }
         int top = s.pop();
-        puchAtBottom(s, data);
+        pushAtBottom(s, data);
         s.push(top);
     }
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class PushAtBottom {
         s.push(2);
         s.push(3);
 
-        puchAtBottom(s, 4);
+        pushAtBottom(s, 4);
 
         while (!s.isEmpty()) {
             // Peek

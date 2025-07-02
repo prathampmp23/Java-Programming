@@ -3,7 +3,7 @@ package ArrayList;
 import java.util.ArrayList;
 
 public class Reverse {
-    public static void main(String args[]) { 
+    public static void main(String args[]) {
         ArrayList<Integer> list = new ArrayList<>();
 
         list.add(1);
@@ -13,10 +13,10 @@ public class Reverse {
         list.add(5);
         System.out.println(list);
 
-        //printing in reverse order
-        //size is same as n-1
-        for(int i=list.size()-1; i>=0; i--){ 
-            System.out.print(list.get(i)+" ");
+        // printing in reverse order
+        // size is same as n-1
+        for (int i = list.size() - 1; i >= 0; i--) {
+            System.out.print(list.get(i) + " ");
         }
         System.out.println();
     }

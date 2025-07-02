@@ -58,8 +58,8 @@ public class CircularQueue {
 
         // Peek O(1)
         public static int peek() {
-            if (isFull()) {
-                System.out.println("Queue is full!");
+            if (isEmpty()) {
+                System.out.println("Queue is empty!");
                 return -1;
             }
             return arr[front];

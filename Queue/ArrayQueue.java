@@ -22,6 +22,7 @@ public class ArrayQueue {
         // Add O(1)
         public static void add(int data) {
             if (rear == size - 1) {
+                System.out.println("Queue is Full!");
                 return;
             }
             rear = rear + 1;
@@ -35,6 +36,7 @@ public class ArrayQueue {
                 return -1;
             }
             int front = arr[0];
+            // shift to previous index (front)
             for (int i = 0; i < rear; i++) {
                 arr[i] = arr[i + 1];
             }
@@ -42,7 +44,7 @@ public class ArrayQueue {
             return front;
         }
 
-        //Peek O(1)
+        // Peek O(1)
         public static int peek() {
             if (isEmpty()) {
                 System.out.println("Queue is empty!");

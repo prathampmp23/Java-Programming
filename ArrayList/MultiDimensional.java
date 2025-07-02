@@ -1,5 +1,7 @@
 package ArrayList;
+
 import java.util.ArrayList;
+
 public class MultiDimensional {
     public static void main(String args[]) {
         ArrayList<ArrayList<Integer>> mainlist = new ArrayList<>();
@@ -14,14 +16,14 @@ public class MultiDimensional {
         list2.add(6);
         mainlist.add(list2);
 
-        for(int i=0; i<mainlist.size(); i++) {
+        for (int i = 0; i < mainlist.size(); i++) {
             ArrayList<Integer> current = mainlist.get(i);
-            for(int j=0; j<current.size(); j++){
-                System.out.print(current.get(j)+" ");
+            for (int j = 0; j < current.size(); j++) {
+                System.out.print(current.get(j) + " ");
             }
             System.out.println();
         }
-        
+
         System.out.println(mainlist);
     }
 }

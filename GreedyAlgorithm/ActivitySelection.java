@@ -41,6 +41,7 @@ public class ActivitySelection {
         }
 
         // "Lambda function" -> shortForm functions
+        // In Java, Comparator is an interface for sorting Java Objects.
         // A Comparator that defines how the elements should be compared.
         // The lambda function o -> o[2] extracts the third element (o[2]) from each
         // sub-array (which represents the end time of an activity). It acts as the
