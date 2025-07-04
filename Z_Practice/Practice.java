@@ -2824,8 +2824,301 @@ public class Practice {
             return data;
         }
     }
-    
 
+    // ********* Binary Search Trees ********* //
+
+    static class Node2 {
+        int data;
+        Node2 left, right;
+
+        Node2(int data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
+    // Inorder
+    public static void inorder(Node2 root) { // O(n)
+        if (root == null) {
+            return;
+        }
+        inorder(root.left);
+        System.out.print(root.data + " ");
+        inorder(root.right);
+    }
+
+    // preorder
+    public static void preorder(Node2 root) { // O(n)
+        if (root == null) {
+            return;
+        }
+        System.out.print(root.data + " ");
+        preorder(root.left);
+        preorder(root.right);
+    }
+
+    public static Node2 insert(Node2 root, int value) {
+        if (root == null) {
+            root = new Node2(value);
+            return root;
+        }
+
+        if (root.data > value) {
+            // left Subtree
+            root.left = insert(root.left, value);
+        } else {
+            // right Subtree
+            root.right = insert(root.right, value);
+        }
+        return root;
+    }
+
+    public static boolean searchInBST(Node2 root, int key) {
+        if (root == null) {
+            return false;
+        }
+
+        if (root.data == key) {
+            return true;
+        }
+
+        if (root.data > key) {
+            return searchInBST(root.left, key);
+        } else {
+            return searchInBST(root.right, key);
+        }
+    }
+
+    public static Node2 deleteNode(Node2 root, int value) {
+        if (root.data > value) {
+            root.left = deleteNode(root.left, value);
+        } else if (root.data < value) {
+            root.right = deleteNode(root.right, value);
+        } else {
+            // Case 1 - leaf node(no child)
+            if (root.left == null && root.right == null) {
+                return null;
+            }
+
+            // Case 2 - Single child
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+
+            // Case 3 - Two childrens
+            Node2 inorderSuccessorNode = findInorderSuccessor(root.right);
+            root.data = inorderSuccessorNode.data;
+            root.right = deleteNode(root.right, inorderSuccessorNode.data);
+        }
+        return root;
+    }
+
+    public static Node2 findInorderSuccessor(Node2 root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+    }
+
+    public static void printInRangeNode(Node2 root, int k1, int k2) {
+        if (root == null) {
+            return;
+        }
+        // if range data lies in both left and right subtree
+        // k1 <= root <= k2
+        if (root.data >= k1 && root.data <= k2) {
+            printInRangeNode(root.left, k1, k2);
+            System.out.print(root.data + " ");
+            printInRangeNode(root.right, k1, k2);
+        }
+        // root < k1 (if all range data lies in left subTree)
+        else if (root.data < k1) {
+            printInRangeNode(root.left, k1, k2);
+        }
+        // root > k2 (if all range data lies in right subTree)
+        else {
+            printInRangeNode(root.right, k1, k2);
+        }
+    }
+
+    public static void printarrayList(ArrayList<Integer> path) {
+        for (int i = 0; i < path.size(); i++) {
+            System.out.print(path.get(i) + " ");
+        }
+        System.out.println();
+    }
+
+    public static void rootToLeafPath(Node2 root, ArrayList<Integer> path) {
+        if (root == null) {
+            return;
+        }
+        path.add(root.data);
+        // condition for leaf node
+        if (root.left == null && root.right == null) {
+            printarrayList(path);
+        }
+        rootToLeafPath(root.left, path);
+        rootToLeafPath(root.right, path);
+        path.remove(path.size() - 1);
+    }
+
+    public static boolean isValidBST(Node2 root, Node2 max, Node2 min) {
+        if (root == null) {
+            return true;
+        }
+
+        if (min != null && root.data <= min.data) {
+            return false;
+        }
+        if (max != null && root.data >= max.data) {
+            return false;
+        }
+        // check for its subtree
+        return isValidBST(root.left, root, min) && isValidBST(root.right, max, root);
+    }
+
+    public static Node2 mirrorBST(Node2 root) {
+        if (root == null) {
+            return null;
+        }
+
+        Node2 leftMirror = mirrorBST(root.left);
+        Node2 rightMirror = mirrorBST(root.right);
+
+        // pointing to mirror subtree or left to right and right to left
+        root.left = rightMirror;
+        root.right = leftMirror;
+
+        return root;
+    }
+
+    public static Node2 createBalancedBST(int arr[], int start, int end) {
+        if (start > end) {
+            return null;
+        }
+        int mid = (start + end) / 2;
+        Node2 root = new Node2(arr[mid]);
+
+        root.left = createBalancedBST(arr, start, mid - 1);
+        root.right = createBalancedBST(arr, mid + 1, end);
+
+        return root;
+    }
+
+    public static void getInorderSeq(Node2 root, ArrayList<Integer> sequence) {
+        if (root == null) {
+            return;
+        }
+        getInorderSeq(root.left, sequence);
+        sequence.add(root.data);
+        getInorderSeq(root.right, sequence);
+    }
+
+    public static Node2 createBalancedBST2(ArrayList<Integer> sequence, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+        int mid = (start + end) / 2;
+        Node2 root = new Node2(sequence.get(mid));
+
+        root.left = createBalancedBST2(sequence, start, mid - 1);
+        root.right = createBalancedBST2(sequence, mid + 1, end);
+
+        return root;
+    }
+
+    public static Node2 BSTtoBalancedBST(Node2 root) {
+        // get inorder sequence
+        ArrayList<Integer> sequence = new ArrayList<>();
+        getInorderSeq(root, sequence);
+
+        // inorder to banlanceBST
+        root = createBalancedBST2(sequence, 0, sequence.size() - 1);
+        return root;
+    }
+
+    static class Info2 {
+        boolean isBST;
+        int size;
+        int max;
+        int min;
+
+        Info2(boolean isBST, int size, int max, int min) {
+            this.isBST = isBST;
+            this.size = size;
+            this.max = max;
+            this.min = min;
+        }
+    }
+
+    public static int maxBST = 0;
+
+    public static Info2 largestBST(Node2 root) {
+        if (root == null) {
+            return new Info2(true, 0, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        }
+        // store information of left and right recursively
+        Info2 leftInfo = largestBST(root.left);
+        Info2 rightInfo = largestBST(root.right);
+        int size = leftInfo.size + rightInfo.size + 1;
+
+        int max = Math.max(root.data, Math.max(leftInfo.max, rightInfo.max));
+        int min = Math.min(root.data, Math.min(leftInfo.min, rightInfo.min));
+
+        if (root.data <= leftInfo.max || root.data >= rightInfo.min) {
+            return new Info2(false, size, max, min);
+        }
+
+        if (leftInfo.isBST && rightInfo.isBST) {
+            maxBST = Math.max(maxBST, size);
+            return new Info2(true, size, max, min);
+        }
+        return new Info2(false, size, max, min);
+    }
+
+    public static Node2 merge2BST(Node2 root1, Node2 root2) {
+         // Get Inorder sequence
+        // BST1
+        ArrayList<Integer> arr1 = new ArrayList<>();
+        getInorderSeq(root1, arr1);
+
+        // BST2
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        getInorderSeq(root2, arr2);
+
+        // Merge BST1 and BST2
+        int i = 0, j = 0;
+        ArrayList<Integer> finalList = new ArrayList<>();
+
+        while (i < arr1.size() && j < arr2.size()) {
+            if (arr1.get(i) <= arr2.get(j)) {
+                finalList.add(arr1.get(i));
+                i++;
+            } else {
+                finalList.add(arr2.get(j));
+                j++;
+            }
+        }
+
+        // for remaining 
+        while (i < arr1.size()) {
+            finalList.add(arr1.get(i));
+            i++;
+        }
+
+        while (j < arr1.size()) {
+            finalList.add(arr2.get(j));
+            j++;
+        }
+
+        // Sorted arrayList -> Balanced BST
+        return createBalancedBST2(finalList, 0, finalList.size() - 1);
+    }
+
+    
     public static void main(String args[]) {
 
         System.out.println("*** Pattern Codes ***");
@@ -3377,5 +3670,132 @@ public class Practice {
         System.out.println();
         BinaryTree.transform(root);
         BinaryTree.preOrder(root);
+        System.out.println();
+
+        System.out.println("*** Binary Search trees***");
+
+        int values[] = { 5, 1, 3, 4, 2, 7 };
+        Node2 rootNode = null;
+        for (int i = 0; i < values.length; i++) {
+            rootNode = insert(rootNode, values[i]);
+        }
+        // this print in sorted order
+        inorder(rootNode);
+        System.out.println();
+
+        if (searchInBST(rootNode, 4)) {
+            System.out.println("key found");
+        } else {
+            System.out.println("key not found");
+        }
+
+        System.out.println("delete node");
+        // deleteNode(rootNode, 1);
+        inorder(rootNode);
+
+        System.out.println();
+
+        int k1 = 3;
+        int k2 = 5;
+        System.out.println("Node in range " + k1 + " to " + k2);
+        printInRangeNode(rootNode, k1, k2);
+        System.out.println();
+
+        System.out.println("Root to leaf path = ");
+        rootToLeafPath(rootNode, new ArrayList<>());
+
+        System.out.println(isValidBST(rootNode, null, null));
+
+        preorder(rootNode);
+        System.out.println();
+        mirrorBST(rootNode);
+        preorder(rootNode);
+        System.out.println();
+
+        int NodeArray[] = { 3, 5, 6, 8, 10, 11, 12 };
+        Node2 newBalancedRoot = createBalancedBST(NodeArray, 0, NodeArray.length - 1);
+        preorder(newBalancedRoot);
+        System.out.println();
+
+        // BST
+        /*
+         * 8
+         * / \
+         * 6 10
+         * / \
+         * 5 11
+         * / \
+         * 3 12
+         */
+
+        Node2 BSTroot = new Node2(8);
+        BSTroot.left = new Node2(6);
+        BSTroot.left.left = new Node2(5);
+        BSTroot.left.left.left = new Node2(3);
+        BSTroot.right = new Node2(10);
+        BSTroot.right.right = new Node2(11);
+        BSTroot.right.right.right = new Node2(12);
+        System.out.println("Sequence before balanceBST");
+        preorder(BSTroot);
+        System.out.println();
+
+        // Balanced BST
+        /*
+         * 8
+         * / \
+         * 5 11
+         * / \ / \
+         * 3 6 10 12
+         */
+
+        BSTroot = BSTtoBalancedBST(BSTroot);
+        System.out.println("Sequence after balanceBST");
+        preorder(BSTroot);
+
+        /*
+         * 50
+         * / \
+         * 30 60
+         * / \ / \
+         * 5 20 45 70
+         * / \
+         * 65 80
+         */
+        Node2 newroot = new Node2(50);
+        newroot.left = new Node2(30);
+        newroot.left.left = new Node2(5);
+        newroot.left.right = new Node2(20);
+        newroot.right = new Node2(60);
+        newroot.right.left = new Node2(45);
+        newroot.right.right = new Node2(70);
+        newroot.right.right.left = new Node2(65);
+        newroot.right.right.right = new Node2(80);
+
+        /*
+         * 60
+         * / \
+         * 45 70
+         * / \
+         * 65 80
+         * Expected BST : size = 5
+         */
+
+        Info2 info = largestBST(newroot);
+        System.out.println(info);
+        System.out.println("Largest BST size = " + maxBST);
+
+        // BST 1
+        Node2 root1 = new Node2(2);
+        root1.left = new Node2(1);
+        root1.right = new Node2(4);
+
+        // BST 2
+        Node2 root2 = new Node2(9);
+        root2.left = new Node2(3);
+        root2.right = new Node2(12);
+
+        // T.c = O(n+m)
+        Node2 mergeroot = merge2BST(root1, root2);
+        preorder(mergeroot);
     }
 }
