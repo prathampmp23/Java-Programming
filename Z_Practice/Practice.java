@@ -2934,11 +2934,11 @@ public class Practice {
             System.out.print(root.data + " ");
             printInRangeNode(root.right, k1, k2);
         }
-        // root < k1 (if all range data lies in left subTree)
-        else if (root.data < k1) {
+        // root > k1 (if all range data lies in left subTree)
+        else if (root.data > k1) {
             printInRangeNode(root.left, k1, k2);
         }
-        // root > k2 (if all range data lies in right subTree)
+        // root < k2 (if all range data lies in right subTree)
         else {
             printInRangeNode(root.right, k1, k2);
         }
