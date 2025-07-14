@@ -33,7 +33,7 @@ public class CycleDetectionUndirectG {
          * 
          */
 
-        // store edges info
+        // store graph info
         // 0 - vertex
         graph[0].add(new Edge(0, 1));
         // graph[0].add(new Edge(0, 2));

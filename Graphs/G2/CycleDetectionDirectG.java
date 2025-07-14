@@ -29,12 +29,12 @@ public class CycleDetectionDirectG {
          *     /     |           
          *   3       |           
          *    ^      |
-         *     \     |
-         *      \   v
-         *         2
+         *     \    |
+         *      \  v
+         *        2
          * 
          */
-        // store edges info
+        // store graph info
         // 0 - vertex
         graph[0].add(new Edge(0, 2));
 
