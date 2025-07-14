@@ -100,7 +100,7 @@ public class DijkstrasAlgorithm {
 
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
-        int V = 7; // no of vertex
+        int V = 6; // no of vertex
 
         // Array of Arraylist
         ArrayList<Edge>[] graph = new ArrayList[V];
