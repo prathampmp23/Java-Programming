@@ -52,11 +52,11 @@ public class ZeroOneKnapsacl {
         int n = val.length;
         int dp[][] = new int[n + 1][W + 1];
 
-        // for initializing 0th col
+        // for initializing 0th col => j (size of knapsack)
         for (int i = 0; i < dp.length; i++) {
             dp[i][0] = 0;
         }
-        // for initializing 0th row
+        // for initializing 0th row => i (no of item)
         for (int i = 0; i < dp[0].length; i++) {
             dp[0][i] = 0;
         }
@@ -109,7 +109,7 @@ public class ZeroOneKnapsacl {
         System.out.println("0-1 Knapsack using memoiation = " + knapsackMemo(val, wt, W, val.length, dp));
         System.out.println("Memoization DP");
         printDP(dp);
-        
+
         // tabulation
         System.out.println("0-1 Knapsack using tabulation = " + knapsackTabu(val, wt, W));
     }
