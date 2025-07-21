@@ -1,6 +1,6 @@
 package DynamicProgramming.DP2;
 
-public class ZeroOneKnapsacl {
+public class ZeroOneKnapsack {
 
     // using recursion - O(2^n)
     public static int knapsackRecursion(int val[], int wt[], int W, int n) {
