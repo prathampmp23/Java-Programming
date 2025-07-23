@@ -1,4 +1,3 @@
-package SpecialSeries;
 public class PrimeRange {
     public static boolean isPrime(int n){
         if(n == 2){

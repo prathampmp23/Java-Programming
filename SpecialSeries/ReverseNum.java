@@ -1,4 +1,3 @@
-package SpecialSeries;
 
 import java.util.*;
 
