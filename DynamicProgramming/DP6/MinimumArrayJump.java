@@ -8,13 +8,13 @@ public class MinimumArrayJump {
         int n = nums.length;
         int dp[] = new int[n];
         Arrays.fill(dp, -1);
-        dp[n - 1] = 0;
+        dp[n - 1] = 0; // for n-1 to n-1 jump steps = 0
 
         for (int i = n - 2; i >= 0; i--) {
             int steps = nums[i];
             int ans = Integer.MAX_VALUE;
             for (int j = i + 1; j <= i + steps && j < n; j++) {
-                if (nums[j] != -1) {
+                if (dp[j] != -1) {
                     ans = Math.min(ans, dp[j] + 1);
                 }
             }
@@ -23,7 +23,7 @@ public class MinimumArrayJump {
             }
         }
 
-        return dp[0];
+        return dp[0]; // final ans stored 
     }
 
     public static void main(String[] args) {
