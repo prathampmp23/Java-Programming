@@ -10,7 +10,8 @@ A collection of algorithms and data structures implemented in Java.
 - [Sorting Algorithms](#sorting-algorithms)
 - [Data Structures](#data-structures)
 - [Dynamic Programming](#dynamic-programming)
-- [Segment Trees](#segment-trees)a
+- [Dynamic Programming Problem Patterns](#dynamic-programming-problem-patterns-and-formulas)
+- [Segment Trees](#segment-trees)
 - [Advanced Algorithms](#advanced-algorithms)
 - [Object-Oriented Programming](#object-oriented-programming)
 - [Utility Classes](#utility-classes)
@@ -508,3 +509,117 @@ This section catalogs common DP problems by pattern, providing recurrence relati
 4. **Overlapping States**
    - Solution: Ensure memoization cache covers all unique states
    - Example: In recursive solutions, pass all relevant parameters
+
+## Segment Trees
+
+### Basic Segment Tree
+- **Description**: Tree-like data structure for range queries and updates
+- **Time Complexity**: 
+  - Build: O(n)
+  - Query: O(log n)
+  - Update: O(log n)
+- **Space Complexity**: O(4*n)
+- **Applications**: Range sum, min/max queries, range GCD
+
+### Lazy Propagation
+- **Description**: Optimization technique to handle range updates efficiently
+- **Time Complexity**: Same as basic segment tree
+- **Implementation**: Delay updates until necessary
+- **Applications**: Range updates like add/multiply to a range
+
+### Segment Tree Formulas and Operations
+
+| Operation | Formula/Approach | Time Complexity | Space Complexity | Implementation Notes |
+|-----------|------------------|-----------------|------------------|----------------------|
+| Build Tree | `buildTree(arr, tree, node, start, end)` | O(n) | O(4*n) | Recursive construction from leaf to root |
+| Point Update | `update(tree, node, start, end, idx, val)` | O(log n) | O(1) | Traverse from root to leaf, update path |
+| Range Query | `query(tree, node, start, end, l, r)` | O(log n) | O(1) | Divide and conquer over ranges |
+| Range Update (Lazy) | `updateRange(tree, lazy, node, start, end, l, r, val)` | O(log n) | O(1) | Mark lazy updates, propagate when needed |
+| Next Larger Element | Segment tree with binary search | O(log² n) | O(n) | Useful for finding next greater/smaller element |
+| Persistent Update | Create new nodes for changes | O(log n) | O(log n) per update | Maintains history of all versions |
+
+## Advanced Algorithms
+
+### Dynamic Programming
+- **Description**: Breaking down problems into simpler subproblems
+- **Examples**: Fibonacci, Knapsack, LCS
+- **Properties**: Overlapping subproblems, Optimal substructure
+
+### Graph Algorithms
+- **Description**: Algorithms operating on graph data structures
+- **Examples**: BFS, DFS, Dijkstra's, Prim's, Kruskal's
+- **Applications**: Network routing, Social networks, Maps
+
+### Advanced Algorithm Formulas and Complexities
+
+| Algorithm Category | Representative Algorithms | Time Complexity | Space Complexity | Key Applications |
+|--------------------|---------------------------|-----------------|------------------|------------------|
+| Dynamic Programming | See DP section | Varies | Varies | Optimization problems, counting |
+| Greedy Algorithms | Huffman coding, Dijkstra's | Varies | Varies | Optimization when greedy choice works |
+| Divide and Conquer | Merge sort, Strassen's matrix | Usually O(n log n) | Usually O(n) | Breaking problems into subproblems |
+| Backtracking | N-Queens, Sudoku solver | Exponential | Usually O(n) | Constraint satisfaction, puzzles |
+| Graph Algorithms | BFS, DFS, Dijkstra's, Floyd-Warshall | Varies | Varies | Network analysis, pathfinding |
+
+## Object-Oriented Programming
+
+### Classes and Objects
+- **Description**: Implementation of classes with proper encapsulation
+- **Features**: Constructors, Methods, Access modifiers
+- **Applications**: Modeling real-world entities
+
+### Inheritance
+- **Description**: Building relationships between classes
+- **Types**: Single, Multiple (interfaces), Hierarchical
+- **Applications**: Code reuse, Is-A relationships
+
+### OOP Design Principles and Patterns
+
+| Principle/Pattern | Description | Usage Example | Benefits |
+|-------------------|-------------|---------------|----------|
+| Encapsulation | Bundling data and methods, hiding implementation | Private fields with getters/setters | Information hiding, modularity |
+| Inheritance | Creating new classes from existing ones | Vehicle → Car, Truck | Code reuse, hierarchical modeling |
+| Polymorphism | Objects of different types through same interface | Shape.draw() for Circle, Rectangle | Flexibility, extensibility |
+| Abstraction | Exposing essential features, hiding complexity | Abstract class Animal with speak() | Simplification, focus on relevant aspects |
+
+## Utility Classes
+
+### String Manipulation
+- **Description**: Methods for string processing
+- **Operations**: Searching, Matching, Transforming
+- **Applications**: Text processing, Data validation
+
+### File I/O
+- **Description**: Reading from and writing to files
+- **Types**: Text files, Binary files
+- **Implementation**: Using streams, buffers
+- **Applications**: Data persistence, Configuration
+
+### Utility Class Implementation Techniques
+
+| Utility Category | Common Operations | Implementation Approaches | Java Classes/Libraries |
+|------------------|-------------------|---------------------------|------------------------|
+| String Manipulation | Searching, matching, replacing | Regular expressions, string builders | String, StringBuilder, Pattern, Matcher |
+| File I/O | Reading, writing, path operations | Streams, buffers, channels | File, Files, Path, BufferedReader, FileOutputStream |
+| Date and Time | Parsing, formatting, arithmetic | Immutable date objects, formatters | LocalDate, LocalTime, LocalDateTime, DateTimeFormatter |
+
+## Algorithm Application Patterns
+
+This section provides a comprehensive reference for common algorithm patterns, when to use them, and their key characteristics.
+
+| Pattern | When to Use | Key Formulas/Concepts | Time Complexity | Suitable Data Structures & Why |
+|---------|-------------|----------------------|-----------------|--------------------------------|
+| **Sliding Window** | • Fixed/variable size subarrays/substrings<br>• Finding max/min/average in subarrays<br>• String problems with window constraints | • Fixed window: `for (end = 0; end < n; end++) { add(end); if (end >= k-1) { process window; remove(start); start++; }`<br>• Variable window: `while (right < n) { expand window; while (condition violated) { contract window; } }`<br>• Window sum calculation: `windowSum += nums[end] - nums[start-1]` | • O(n) for most applications<br>• O(n×k) if window processing is complex | • **Array/String**: Direct access to elements<br>• **HashMap/HashSet**: Track frequencies or unique elements in window<br>• **Deque**: Maintain monotonic properties (e.g., max/min in window)<br>• Why: Need fast access to window elements and efficient updates as window slides |
+| **Two Pointers** | • Sorted array problems<br>• Palindrome verification<br>• Removing duplicates<br>• Finding pairs/triplets with conditions | • Opposite direction: `left=0, right=n-1; while (left < right) {...}`<br>• Same direction: `slow=0, fast=0; while (fast < n) {...}`<br>• Dutch national flag: `while (mid <= high) { if (arr[mid] == 0) swap(low++, mid++); else if (arr[mid] == 1) mid++; else swap(mid, high--); }` | • O(n) for most applications<br>• O(n²) for nested iterations (e.g., 3Sum) | • **Array**: Fast random access for pointer movement<br>• **LinkedList**: For slow/fast pointer problems<br>• **StringBuilder**: For in-place string manipulation<br>• Why: Need direct access to elements at arbitrary positions for comparison and swapping |
+| **Fast & Slow Pointers** | • Cycle detection in linked lists<br>• Finding middle element<br>• Finding kth element from end<br>• Palindrome linked list | • Floyd's cycle detection: `slow = head, fast = head; while (fast && fast.next) { slow = slow.next; fast = fast.next.next; if (slow == fast) return true; }`<br>• Finding middle: `while (fast && fast.next) { slow = slow.next; fast = fast.next.next; }`<br>• Cycle start: After meeting, reset one pointer to head and move both at same pace | • O(n) time<br>• O(1) space (key advantage) | • **LinkedList**: Natural fit for traversal with different speeds<br>• Why: Linked structure allows nodes to be traversed at different rates without extra space for tracking visited nodes |
+| **Merge Intervals** | • Schedule/meeting problems<br>• Interval merging/insertion<br>• Coverage/overlap problems | • Sort intervals by start time: `Arrays.sort(intervals, (a, b) -> a[0] - b[0])`<br>• Merge logic: `if (current.end >= next.start) { current.end = Math.max(current.end, next.end); }`<br>• Non-overlapping intervals: Check `current.end <= next.start` | • O(n log n) due to sorting<br>• O(n) for linear scan after sorting | • **Array/ArrayList**: For storing and sorting intervals<br>• **PriorityQueue**: For problems requiring minimum/maximum end times<br>• **TreeMap**: For efficient interval search operations<br>• Why: Need to sort intervals and perform sequential processing with occasional lookups |
+| **Cyclic Sort** | • Arrays containing 1 to n values<br>• Finding missing/duplicate numbers<br>• When array elements map to indices | • Core idea: `nums[i]` should be at position `nums[i] - 1`<br>• Algorithm: `while (nums[i] != i + 1 && nums[i] <= n) { swap(nums, i, nums[i] - 1); }`<br>• Finding missing: Elements not at correct positions<br>• For 0 to n-1 range: `nums[i]` should be at position `nums[i]` | • O(n) time<br>• O(1) space (in-place) | • **Array**: Direct in-place swapping capabilities<br>• Why: Relies on direct index-to-value mapping and requires constant-time element swapping |
+| **In-place Reversal of Linked List** | • Linked list reversal problems<br>• K-group reversal<br>• Alternating reversal | • Basic reversal: `prev = null, current = head; while (current) { next = current.next; current.next = prev; prev = current; current = next; }`<br>• K-group: Reverse each group separately<br>• Remember to store the connections between groups | • O(n) time<br>• O(1) space | • **LinkedList**: Natural choice for pointer manipulation<br>• Why: Enables O(1) pointer reassignments for reversals without extra space |
+| **Binary Search** | • Sorted arrays/matrices<br>• Monotonic functions<br>• Search space reduction<br>• "Find the minimum value that satisfies condition" | • Basic: `while (left <= right) { mid = left + (right - left) / 2; if (target < arr[mid]) right = mid - 1; else if (target > arr[mid]) left = mid + 1; else return mid; }`<br>• Lower bound: `if (condition(mid)) right = mid; else left = mid + 1;`<br>• Upper bound: `if (condition(mid)) left = mid; else right = mid - 1;` | • O(log n) time<br>• O(1) space (iterative)<br>• O(log n) space (recursive) | • **Array**: Random access needed for mid-point calculation<br>• **Binary Search Tree**: For more complex search operations<br>• Why: Requires O(1) access to middle elements to enable divide and conquer approach |
+| **DFS/BFS** | • Tree/graph traversal<br>• Path finding<br>• Connected components<br>• Topological ordering | • DFS (recursive): `void dfs(node) { visit(node); for (neighbor : node.neighbors) { if (!visited[neighbor]) dfs(neighbor); } }`<br>• BFS (queue): `queue.offer(start); while (!queue.isEmpty()) { node = queue.poll(); for (neighbor : node.neighbors) { if (!visited[neighbor]) { visit(neighbor); queue.offer(neighbor); } } }`<br>• DFS uses stack (implicit or explicit), BFS uses queue | • O(V + E) time<br>• O(V) space<br>• BFS finds shortest path in unweighted graphs | • **Adjacency List/Matrix**: For graph representation<br>• **Queue**: For BFS level-order traversal<br>• **Stack/Recursion**: For DFS depth-first traversal<br>• **HashSet/Array**: To track visited nodes<br>• Why: Queue ensures level-by-level exploration; stack/recursion enables backtracking |
+| **Backtracking** | • Combinatorial problems<br>• Constraint satisfaction<br>• Permutations/combinations<br>• Puzzle solving | • Pattern: `void backtrack(state, choices) { if (isSolution(state)) { add(state); return; } for (choice : choices) { if (isValid(choice)) { apply(choice); backtrack(newState, remainingChoices); undo(choice); } } }`<br>• Decision tree exploration<br>• Pruning: Early termination of paths that can't lead to solutions | • O(branches^depth) often exponential<br>• Space complexity depends on recursion depth | • **Recursion Stack**: To manage state exploration<br>• **ArrayList/StringBuilder**: For state building and backtracking<br>• **HashSet**: For constraint checking<br>• Why: Recursion naturally implements the stack needed for depth-first exploration with backtracking capability |
+| **Dynamic Programming** | • Optimization problems<br>• Counting problems<br>• Problems with overlapping subproblems | • Memoization (top-down): `dp(state) { if (memo.contains(state)) return memo[state]; result = recurrence_relation(state); memo[state] = result; return result; }`<br>• Tabulation (bottom-up): Build table from base cases<br>• State transitions: Express current state in terms of previous states | • Time: O(states × transitions)<br>• Space: O(states) or O(states × recursion depth) | • **Array/Matrix**: For tabulation approach<br>• **HashMap**: For memoization with complex states<br>• **Recursion + Map**: For top-down approach<br>• Why: Arrays provide O(1) access to previous states; maps handle non-sequential states efficiently |
+| **Greedy Algorithm** | • Making locally optimal choices<br>• When local optimum leads to global optimum<br>• Activity selection, Huffman coding | • Sort by some criteria (start time, end time, ratio)<br>• Make best choice at each step without reconsidering<br>• Activity selection: `sort by end time; select earliest ending compatible activity`<br>• Fractional knapsack: `sort by value/weight ratio; take items in ratio order` | • Often O(n log n) due to sorting<br>• O(n) for selection phase | • **PriorityQueue/Heap**: For selecting optimal choice at each step<br>• **Array**: For sorting by criteria<br>• **Greedy Choice Array**: To track selected items<br>• Why: Heaps efficiently extract the next best choice; sorted arrays enable sequential processing by optimization criteria |
+| **Bit Manipulation** | • Optimizing space/time<br>• Low-level operations<br>• Flags and states representation | • Set bit: `num \| (1 << pos)`<br>• Clear bit: `num & ~(1 << pos)`<br>• Toggle bit: `num ^ (1 << pos)`<br>• Check bit: `(num >> pos) & 1`<br>• Clear rightmost set bit: `num & (num - 1)`<br>• Isolate rightmost set bit: `num & -num`<br>• Power of 2: `(n & (n-1)) == 0` | • O(1) for most bit operations<br>• O(log n) or O(number of bits) for iteration | • **Primitive Integer Types**: Direct bit manipulation<br>• **BitSet**: For large bit arrays<br>• Why: Provides direct access to binary representation with efficient bit-level operations |
+| **Topological Sort** | • Directed Acyclic Graphs (DAGs)<br>• Dependency resolution<br>• Task scheduling<br>• Course prerequisites | • Kahn's algorithm: `Start with nodes having 0 in-degree; Process node and decrement neighbor in-degrees; Add to queue when in-degree becomes 0`<br>• DFS approach: `Perform DFS and add nodes to result in reverse post-order`<br>• Cycle detection: If topological sort doesn't include all vertices, graph has cycle | • O(V + E) time<br>• O(V) space | • **Adjacency List**: Graph representation<br>• **Queue**: For Kahn's algorithm processing nodes with 0 in-degree<br>• **Stack**: For DFS-based approach to store post-order<br>• **HashMap/Array**: For tracking in-degrees<br>• Why: Queue enables processing nodes in correct dependency order; adjacency list provides efficient edge traversal |
+| **Union-Find (Disjoint Set)** | • Connected components<br>• Cycle detection in undirected graphs<br>• Dynamic connectivity<br>• Kruskal's MST algorithm | • Operations: `find(x)` and `union(x, y)`<br>• Path compression: `find(x) { if (x != parent[x]) parent[x] = find(parent[x]); return parent[x]; }`<br>• Union by rank: `if (rank[rootX] < rank[rootY]) parent[rootX] = rootY; else { parent[rootY] = rootX; if (rank[rootX] == rank[rootY]) rank[rootX]++; }` | • Nearly O(1) amortized per operation with optimizations<br>• O(n) space | • **Array**: For parent and rank tracking<br>• **Custom DisjointSet Class**: Encapsulating operations<br>• Why: Arrays provide O(1) access to parent relationships; simple structure enables path compression optimizations |
+| **Trie (Prefix Tree)** | • String prefix operations<br>• Autocomplete/spell checking<br>• Dictionary implementations<br>• IP routing | • Structure: Tree where each node has multiple children (often 26 for lowercase letters)<br>• Each path from root represents a string/prefix<br>• Operations: `insert(word)`, `search(word)`, `startsWith(prefix)`<br>• Often uses terminal nodes or boolean flags to mark complete words | • O(m) time for operations where m is key length<br>• O(n×m) space where n is number of keys | • **Custom TrieNode Class**: With children array/map<br>• **HashMap/Array**: For storing children at each node<br>• Why: Tree structure naturally represents character sequences; array/map of children enables efficient prefix-based operations |
