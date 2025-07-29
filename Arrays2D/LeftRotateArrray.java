@@ -15,7 +15,7 @@ public class LeftRotateArrray {
         int n = arr.length;
         k = k % n;
         int temp[] = new int[k];
-        // store first elemrnt till k in temp
+        // store first element till k in temp
         for (int i = 0; i < temp.length; i++) {
             temp[i] = arr[i];
         }
@@ -52,6 +52,31 @@ public class LeftRotateArrray {
         }
     }
 
+    // using reverse optimized
+    public static void reverse(int num[], int first, int last) {
+        while (first < last) {
+            int temp = num[last];
+            num[last] = num[first];
+            num[first] = temp;
+            first++;
+            last--;
+        }
+    }
+
+    public static void leftRotateReverse(int nums[], int k) {
+        int n = nums.length;
+        k = k % n; // in case k > n
+
+        // Step 1: Reverse the whole array
+        reverse(nums, 0, n - 1);
+
+        // Step 2: Reverse the first k elements
+        reverse(nums, 0, k - 1);
+
+        // Step 3: Reverse the remaining elements
+        reverse(nums, k, n - 1);
+    }
+
     public static void main(String[] args) {
         int arr1[] = { 1, 2, 3, 4, 5 };
         leftRotateByOnePlace(arr1);
@@ -62,8 +87,13 @@ public class LeftRotateArrray {
         System.out.println();
 
         int arr2[] = { -1, -100, 3, 99 };
-        leftRotate(arr2, 2);
-        // leftRotate2(arr2, 2);
+        // leftRotate(arr2, 2);
+        // // leftRotate2(arr2, 2);
+        // for (int i = 0; i < arr2.length; i++) {
+        // System.out.print(arr2[i] + " ");
+        // }
+
+        leftRotateReverse(arr2, 2);
         for (int i = 0; i < arr2.length; i++) {
             System.out.print(arr2[i] + " ");
         }
