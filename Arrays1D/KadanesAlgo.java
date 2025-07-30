@@ -42,6 +42,48 @@ public class KadanesAlgo {
         }
     }
 
+    public static void kadanesAlgo3(int nums[]) {
+        int ms = nums[0];
+        int cs = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            cs = Math.max(nums[i], cs + nums[i]);
+            ms = Math.max(ms, cs);
+        }
+
+        System.out.println("Maximum sum of kadane's subarray is: " + ms);
+    }
+
+    // to print maxSubarray element
+    public static void kadanesAlgo4(int arr[]) {
+        int currSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int start = 0;
+        int ansSt = 0;
+        int ansEd = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            // if sum == 0 then we have new start
+            if (currSum == 0) {
+                start = i;
+            }
+            currSum += arr[i];
+
+            if (maxSum < currSum) {
+                maxSum = currSum;
+                ansSt = start;
+                ansEd = i;
+            }
+            if (currSum < 0) {
+                currSum = 0;
+            }
+        }
+        System.out.println("Max Subarray = ");
+        for (int i = ansSt; i <= ansEd; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
     public static void main(String[] args) {
         // All negative values
         // int num[] = { -1, -2, -6, -1, -3 };
@@ -51,5 +93,8 @@ public class KadanesAlgo {
         System.out.println("Kadane's sum is  :");
         kadanesAlgo(num);
         kadanesAlgo2(num);
+        kadanesAlgo3(num);
+        // print maxSubArray sum
+        kadanesAlgo4(num);
     }
 }

@@ -1,4 +1,4 @@
-package Arrays2D;
+package Arrays1D;
 
 public class MoveZeroAtEnd {
     // BruteForce

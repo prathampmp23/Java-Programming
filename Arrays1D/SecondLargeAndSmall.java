@@ -1,4 +1,4 @@
-package Arrays2D;
+package Arrays1D;
 
 public class SecondLargeAndSmall {
     public static int secondLargest(int arr[]) {
