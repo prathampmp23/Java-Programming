@@ -9,6 +9,7 @@ public class MergeSort {
         }
         System.out.println();
     }
+    
     public static void mergeSort(int arr[] , int si , int ei){
         if(si >= ei){
             return;
@@ -21,6 +22,7 @@ public class MergeSort {
 
         merge(arr,si,mid,ei);
     }
+
     public static void merge(int arr[] , int si , int mid , int ei){
         int temp[] = new int[ei-si+1];
         int i = si;     //iteration for left part
@@ -29,13 +31,10 @@ public class MergeSort {
 
         while(i <= mid && j <= ei){
             if(arr[i] < arr[j]){
-                temp[k] = arr[i];
-                i++;
+                temp[k++] = arr[i++];
             } else {
-                temp[k] = arr[j];
-                j++;
+                temp[k++] = arr[j++];
             }
-            k++;
         }
         // Left part 
         while(i <= mid){
