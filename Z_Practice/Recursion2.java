@@ -1,5 +1,8 @@
 package Z_Practice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Recursion2 {
 
     public static int tilingProblem(int n) {
@@ -69,11 +72,34 @@ public class Recursion2 {
         }
     }
 
+    public static List<String> generateBinaryStrings(int n) {
+        List<String> ans = new ArrayList<>();
+        printBinaryString(n, 0, "" , ans);
+        return ans;
+        
+    }
+    public static void printBinaryString(int n, int lastPlace, String str, List<String> ans) {
+        // Base case
+        if (n == 0) {
+            ans.add(str);
+            return;
+        }
+        
+        // last Place 
+        printBinaryString(n - 1, 0, str + "0", ans);
+        if (lastPlace == 0) {
+            printBinaryString(n - 1, 1, str + "1", ans);
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Tiling problem total ways = " + tilingProblem(3));
         String str = "appnnacollege";
         removeDuplicate(str, 0, new StringBuilder(""), new boolean[26]);
         System.out.println("Total friends paring ways = " + friendsPairing(3));
         printBinaryString(3, 0, "");
+
+        List<String> ans = generateBinaryStrings(3);
+        System.out.println(ans);
     }
 }
