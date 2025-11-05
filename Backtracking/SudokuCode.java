@@ -1,6 +1,6 @@
 package Backtracking;
 
-public class Sudoku {
+public class SudokuCode {
     public static boolean sudokuSolver(int sudoku[][] , int row , int col) {
         //base case
         if(row == 9) {
