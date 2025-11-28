@@ -1,4 +1,5 @@
-public class powerofNo {
+public class PowerOfNo {
+
     public static int power(int x, int n) {
         if (n == 0) {
             return 1;

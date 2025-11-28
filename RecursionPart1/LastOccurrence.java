@@ -1,3 +1,4 @@
+
 public class LastOccurrence {
     public static int lastOccurrence(int arr[], int key, int i) {
         if (i == arr.length) {

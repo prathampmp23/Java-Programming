@@ -1,3 +1,4 @@
+
 public class FirstOccurrence {
     public static int firstOccurrence(int arr[], int key, int i) {
         if (i == arr.length) {
