@@ -33,6 +33,14 @@ public class TraversalTechniques {
             return newNode;
         }
 
+        // **** Depth-First Search (DFS) ****
+        // Explores a binary tree by going as deeply as possible along each branch
+        // before backtracking.
+
+        // 1. Preorder
+        // 2. Inorder
+        // 3. Post order
+
         // Preorder
         public static void preorder(Node root) { // O(n)
             if (root == null) {
@@ -62,6 +70,10 @@ public class TraversalTechniques {
             postorder(root.right);
             System.out.print(root.data + " ");
         }
+
+        // **** Breadth-First Search (BFS) ****
+        // Explores a binary tree level by level, visiting all nodes at a given level
+        // before processing to the next level
 
         // Level order
         public static void levelOrder(Node root) {
@@ -96,6 +108,7 @@ public class TraversalTechniques {
         }
     }
 
+    // Another method
     public List<List<Integer>> levelOrder(Node root) {
         List<List<Integer>> ans = new ArrayList<>();
         if (root == null)
