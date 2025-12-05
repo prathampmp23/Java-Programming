@@ -135,6 +135,65 @@ public class TraversalTechniques {
         return ans;
     }
 
+    // All traversal in one Code
+
+    static class Pair {
+        Node node;
+        int num;
+
+        public Pair(Node node, int num) {
+            this.node = node;
+            this.num = num;
+        }
+    }
+
+    public static void preInPost(Node root) {
+        Stack<Pair> st = new Stack<Pair>();
+        st.push(new Pair(root, 1));
+        List<Integer> pre = new ArrayList<>();
+        List<Integer> in = new ArrayList<>();
+        List<Integer> post = new ArrayList<>();
+
+        if (root == null) {
+            return;
+        }
+
+        while (!st.isEmpty()) {
+            Pair it = st.pop();
+
+            // preOrder part
+            // push left part of tree
+            if (it.num == 1) {
+                pre.add(it.node.data);
+                it.num++;
+                st.push(it);
+                if (it.node.left != null) {
+                    st.push(new Pair(it.node.left, 1));
+                }
+            }
+            // InOrder part
+            // push right part of tree
+            else if (it.num == 2) {
+                in.add(it.node.data);
+                it.num++;
+                st.push(it);
+                if (it.node.right != null) {
+                    st.push(new Pair(it.node.right, 1));
+                }
+            }
+
+            // PostOrder part
+            // dont add back to stack
+            else {
+                post.add(it.node.data);
+            }
+        }
+
+        System.out.println("PreOrder = " + pre);
+        System.out.println("InOrder = " + in);
+        System.out.println("PostOrder = " + post);
+    }
+
     public static void main(String[] args) {
         int nodes[] = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
         // BinaryTree tree = new BinaryTree();
@@ -156,5 +215,7 @@ public class TraversalTechniques {
         System.out.println("Levelorder = ");
         BinaryTree.levelOrder(root);
         System.out.println();
+
+        preInPost(root);
     }
 }
