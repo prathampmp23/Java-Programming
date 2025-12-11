@@ -17,11 +17,11 @@ public class TopViewOfTree {
 
     static class Info {
         Node node;
-        int hd;
+        int horiDict;
 
-        public Info(Node node, int hd) {
+        public Info(Node node, int horiDict) {
             this.node = node;
-            this.hd = hd;
+            this.horiDict = horiDict;
         }
     }
 
@@ -48,21 +48,21 @@ public class TopViewOfTree {
             } else {
                 // process for horizontal distance
 
-                // check is hd is exist in map
-                if (!map.containsKey(curr.hd)) { // first time my hd is occuring
-                    map.put(curr.hd, curr.node);
+                // check is horiDict is exist in map
+                if (!map.containsKey(curr.horiDict)) { // first time my horiDict is occuring
+                    map.put(curr.horiDict, curr.node);
                 }
 
                 // check for left child
                 if (curr.node.left != null) {
-                    q.add(new Info(curr.node.left, curr.hd - 1));
-                    min = Math.min(min, curr.hd - 1);
+                    q.add(new Info(curr.node.left, curr.horiDict - 1));
+                    min = Math.min(min, curr.horiDict - 1);
                 }
 
                 // check for right child
                 if (curr.node.right != null) {
-                    q.add(new Info(curr.node.right, curr.hd + 1));
-                    max = Math.max(max, curr.hd + 1);
+                    q.add(new Info(curr.node.right, curr.horiDict + 1));
+                    max = Math.max(max, curr.horiDict + 1);
                 }
             }
         }
