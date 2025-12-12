@@ -75,6 +75,33 @@ public class TopViewOfTree {
 
     }
 
+    public static ArrayList<Integer> topView2(Node root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        if (root == null)
+            return ans;
+
+        Queue<Info> q = new LinkedList<>();
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        q.add(new Info(root, 0));
+
+        while (!q.isEmpty()) {
+            Info curr = q.remove();
+            int horiDict = curr.horiDict;
+            Node temp = curr.node;
+            if (!map.containsKey(horiDict))
+                map.put(horiDict, temp.data);
+            if (temp.left != null)
+                q.add(new Info(temp.left, horiDict - 1));
+            if (temp.right != null)
+                q.add(new Info(temp.right, horiDict + 1));
+        }
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            ans.add(entry.getValue());
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         // Tree
         /*
@@ -94,5 +121,7 @@ public class TopViewOfTree {
         root.right.right = new Node(7);
 
         topView(root);
+        ArrayList<Integer> ans = topView2(root);
+        System.out.println(ans);
     }
 }
