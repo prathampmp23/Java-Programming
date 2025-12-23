@@ -36,18 +36,19 @@ public class OOPsI {
         shark.swim();
 
         // Polymorphism
-        // method overloading
+        // 1.method overloading (Compile time)
         Calculator c1 = new Calculator();
         System.out.println(c1.sum(2, 3));
         System.out.println(c1.sum((float) 2.5, (float) 3.6));
         System.out.println(c1.sum(2, 3, 8));
 
-        // method overriding
-        Deer d1 = new Deer();
-        d1.eat();
+        // 2.method overriding (Runtime)
+        // also called as ** Dynamic method dispatch **
+        // (super class ref variable) = (sub class object)
+        Animal obj = new Deer();
+        obj.eat();
 
         // Abstraction
-
         Horse h1 = new Horse();
         h1.eat();
         h1.walk();
@@ -68,9 +69,28 @@ public class OOPsI {
         q1.moves();
         King k1 = new King();
         k1.moves();
+
+        // Wrapper classes - Integer, Character, Boolean, Long , ..etc
+        // Auto-Boxing
+        int num = 7; // primitive value
+        Integer num1 = num; // converted to object value (wrapper arround primative)
+        System.out.println(num1);
+
+        // Auto-UnBoxing
+        int num2 = num1.intValue(); // converted back to primitive value
+        System.out.println(num2);
+
+        // Inner class or anonymous inner class
+        Animal obj1 = new Animal() {
+            void eat() {
+                System.out.println("new eats");
+            }
+        };
+        obj1.eat();
     }
 }
 
+// **** Constructor ****
 class Student {
     int rollNo;
     String name;
@@ -112,7 +132,7 @@ class Student {
     }
 }
 
-// classes
+// **** Encapsulation ****
 class Pen {
     private String color;
     private int tip;
@@ -141,7 +161,7 @@ class Pen {
     }
 }
 
-// Inheritance
+// **** Inheritance ****
 // Base class / parent
 class Animal {
     int color;
@@ -164,9 +184,14 @@ class Fish extends Animal {
     }
 }
 
-// Polymorphism
+// **** Polymorphism ******
+
+// Types :-
+// 1. Compile time (Overloading)
+// 2. Run time (Overriding)
+
 class Calculator {
-    // Method overloading
+    // Method overloading (diff parameters)
     int sum(int a, int b) {
         return a + b;
     }
@@ -181,13 +206,35 @@ class Calculator {
 }
 
 class Deer extends Animal {
-    // Method overriding
+    // Method overriding (Dynamaic method dispatch)
     void eat() {
         System.out.println("Eats grass");
     }
 }
 
-// Abstraction
+// to perform Runtime polymorphism (overriding)
+
+// Normal object creation
+// Animal a = new Animal(); parent class obj (super class)
+// Deer d = new Deer(); chile class obj (subClass)
+
+// To do runtime polymorphism Object creation is like
+// to only parent class reference is possible for "a" variable and child object
+// is used
+// Animal a = new Deer();
+// (super class ref) = (sub class object)
+
+// X wrong creation of object
+// Deer d = new Animal(); // X
+
+// and we can reassigin objects to use method of specific object
+// Animal obj = new Animal();
+// obj.eat(); // animal eat method called
+
+// obj = new Deer();
+// obj.eat(); // deer eat method called
+
+// **** Abstraction ****
 
 // ** abstract class
 abstract class Animals {
@@ -230,7 +277,7 @@ class Chicken extends Animals {
     }
 }
 
-// Interface
+// **** Interface ****
 interface ChessPlayer {
     void moves();
 }
@@ -252,3 +299,4 @@ class King implements ChessPlayer {
         System.out.println("up down left right diagonal (by one moves)");
     }
 }
+
