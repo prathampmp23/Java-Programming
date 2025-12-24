@@ -1,4 +1,4 @@
-package Z_Practice;
+package Core;
 
 enum Status {
     Running, Success, Failed, Pending; // string constants

@@ -1,6 +1,6 @@
-package Z_Practice;
+package Core;
 
-public class OOPsI {
+public class OOPs {
 
     public static void main(String args[]) {
         // Object (creation)
@@ -64,11 +64,6 @@ public class OOPsI {
         g1.changeColor();
         System.out.println(g1.color);
 
-        // Interface
-        Queen q1 = new Queen();
-        q1.moves();
-        King k1 = new King();
-        k1.moves();
 
         // Wrapper classes - Integer, Character, Boolean, Long , ..etc
         // Auto-Boxing
@@ -274,29 +269,6 @@ class Chicken extends Animals {
     // actual implemented in derived classes
     void walk() {
         System.out.println("Walkes on 2 legs");
-    }
-}
-
-// **** Interface ****
-interface ChessPlayer {
-    void moves();
-}
-
-class Queen implements ChessPlayer {
-    public void moves() {
-        System.out.println("up down left right diagonal (in all direction)");
-    }
-}
-
-class Rook implements ChessPlayer {
-    public void moves() {
-        System.out.println("up down left right diagonal");
-    }
-}
-
-class King implements ChessPlayer {
-    public void moves() {
-        System.out.println("up down left right diagonal (by one moves)");
     }
 }
 
