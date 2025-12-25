@@ -55,6 +55,16 @@ public class ValidateBST {
         return isValidBST(root.left, min, root) && isValidBST(root.right, root, max);
     }
 
+    public boolean isValidBST(Node root) {
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+    
+    public boolean isValidBST(Node root, long minVal, long maxVal) {
+        if (root == null) return true;
+        if (root.data >= maxVal || root.data <= minVal) return false;
+        return isValidBST(root.left, minVal, root.data) && isValidBST(root.right, root.data, maxVal);
+    }
+
     public static void main(String[] args) {
         int values[] = { 8, 5, 3, 6, 10, 11, 14 };
         Node root = null;
