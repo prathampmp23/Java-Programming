@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AlienRepository<springboot_restapi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "sbrestapi.AlienRepository",
+            "projectName": "springboot_restapi",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
