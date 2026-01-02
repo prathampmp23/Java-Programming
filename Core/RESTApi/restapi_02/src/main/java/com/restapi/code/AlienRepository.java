@@ -69,27 +69,6 @@ public class AlienRepository {
         } catch (Exception e) {
             System.out.println(e);
         }
-
-        // System.out.println("Alien is called!");
-        // aliens = new ArrayList<>();
-
-        // Alien a1 = new Alien();
-        // a1.setId(101);
-        // a1.setName("Pratham");
-        // a1.setPoints(61);
-        // aliens.add(a1);
-
-        // Alien a2 = new Alien();
-        // a2.setId(102);
-        // a2.setName("Rishabh");
-        // a2.setPoints(57);
-        // aliens.add(a2);
-
-        // Alien a3 = new Alien();
-        // a3.setId(103);
-        // a3.setName("Manthan");
-        // a3.setPoints(55);
-        // aliens.add(a3);
     }
 
     // get all aliens
