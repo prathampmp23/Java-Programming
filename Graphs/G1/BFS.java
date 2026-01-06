@@ -2,6 +2,7 @@ package Graphs.G1;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class BFS {
@@ -98,6 +99,28 @@ public class BFS {
         }
     }
 
+    public static List<Integer> bfsOfGraph(int V, List<List<Integer>> adj) {
+        List<Integer> ans = new ArrayList<>();
+        boolean visited[] = new boolean[V];
+        Queue<Integer> q = new LinkedList<>();
+
+        q.add(0); 
+        visited[0] = true;
+        
+        while(!q.isEmpty()) {
+            int curr = q.poll();
+            ans.add(curr);
+
+            for (int neighbor : adj.get(curr)) {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    q.add(neighbor);
+                }
+            } 
+        }
+        return ans;
+    }
+
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         int V = 7; // no of vertex
@@ -107,5 +130,30 @@ public class BFS {
 
         createGraph(graph);
         bfs(graph);
+        System.out.println();
+
+        int v = 5;
+        List<List<Integer>> adjList = new ArrayList<>();
+
+        for (int i = 0; i < v; i++) {
+            adjList.add(new ArrayList<>());
+        }
+        adjList.get(0).add(2);
+        adjList.get(0).add(3);
+        adjList.get(0).add(1);
+
+        adjList.get(1).add(0);
+
+        adjList.get(2).add(0);
+        adjList.get(2).add(4);
+
+        adjList.get(3).add(0);
+
+        adjList.get(4).add(2);
+
+        System.out.println("Adjancency List = " + adjList);
+
+        List<Integer> bfs = bfsOfGraph(v, adjList);
+        System.out.println("BFS traversal = " + bfs);
     }
 }

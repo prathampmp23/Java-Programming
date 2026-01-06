@@ -18,6 +18,22 @@ public class ConnectedComponents {
     }
 
     static void createGraph(ArrayList<Edge>[] graph) {
+        /*
+         *            0
+         *           / \
+         *         /    \ 
+         *       /       \
+         *      2        1
+         *      |        |
+         *      |        |
+         *      |        |
+         *      4 ------ 3
+         *      \       /
+         *       \    /
+         *        \  /
+         *         5 ------- 6
+         *        
+         */
 
         // null -> empty Arraylist
         for (int i = 0; i < graph.length; i++) {
@@ -31,19 +47,19 @@ public class ConnectedComponents {
 
         // 1 - vertex
         graph[1].add(new Edge(1, 0, 1));
-        graph[1].add(new Edge(1, 3, 1));
+        // graph[1].add(new Edge(1, 3, 1));
 
         // 2 - vertex
         graph[2].add(new Edge(2, 0, 1));
-        graph[2].add(new Edge(2, 4, 1));
+        // graph[2].add(new Edge(2, 4, 1));
 
         // 3 - vertex
-        graph[3].add(new Edge(3, 1, 1));
+        // graph[3].add(new Edge(3, 1, 1));
         graph[3].add(new Edge(3, 4, 1));
         graph[3].add(new Edge(3, 5, 1));
 
         // 4 - vertex
-        graph[4].add(new Edge(4, 2, 1));
+        // graph[4].add(new Edge(4, 2, 1));
         graph[4].add(new Edge(4, 3, 1));
         graph[4].add(new Edge(4, 5, 1));
 

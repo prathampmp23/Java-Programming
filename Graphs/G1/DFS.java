@@ -1,6 +1,7 @@
 package Graphs.G1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DFS {
     static class Edge {
@@ -83,7 +84,24 @@ public class DFS {
                 dfs(graph, e.destination, visited);
             }
         }
+    }
 
+    public static List<Integer> dfsOfGraph(int V, List<List<Integer>> adj) {
+        List<Integer> ans = new ArrayList<>();
+        boolean visited[] = new boolean[V];
+        dfs(adj, 0, visited, ans);
+        return ans;
+    }
+
+    public static void dfs(List<List<Integer>> adj, int curr, boolean visited[], List<Integer> ans) {
+        visited[curr] = true;
+        ans.add(curr);
+
+        for(int neighbour: adj.get(curr)) {
+            if(!visited[neighbour]) {
+                dfs(adj, neighbour, visited, ans);
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -95,5 +113,30 @@ public class DFS {
 
         createGraph(graph);
         dfs(graph, 0, new boolean[V]);
+        System.out.println();
+
+        int v = 5;
+        List<List<Integer>> adjList = new ArrayList<>();
+
+        for (int i = 0; i < v; i++) {
+            adjList.add(new ArrayList<>());
+        }
+        adjList.get(0).add(2);
+        adjList.get(0).add(3);
+        adjList.get(0).add(1);
+
+        adjList.get(1).add(0);
+
+        adjList.get(2).add(0);
+        adjList.get(2).add(4);
+
+        adjList.get(3).add(0);
+
+        adjList.get(4).add(2);
+
+        System.out.println("Adjancency List = " + adjList);
+
+        List<Integer> dfs = dfsOfGraph(v, adjList);
+        System.out.println("DFS traversal = " + dfs);
     }
 }
