@@ -2,6 +2,7 @@ package Graphs.G2;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class ConnectedComponents {
@@ -19,20 +20,20 @@ public class ConnectedComponents {
 
     static void createGraph(ArrayList<Edge>[] graph) {
         /*
-         *            0
-         *           / \
-         *         /    \ 
-         *       /       \
-         *      2        1
-         *      |        |
-         *      |        |
-         *      |        |
-         *      4 ------ 3
-         *      \       /
-         *       \    /
-         *        \  /
-         *         5 ------- 6
-         *        
+         * 0
+         * / \
+         * / \
+         * / \
+         * 2 1
+         * | |
+         * | |
+         * | |
+         * 4 ------ 3
+         * \ /
+         * \ /
+         * \ /
+         * 5 ------- 6
+         * 
          */
 
         // null -> empty Arraylist
@@ -124,7 +125,71 @@ public class ConnectedComponents {
                 dfsUtil(graph, e.destination, visited);
             }
         }
+    }
 
+    // Find no of connected components
+    // using matrix of 0s and 1s
+    public int findCircleNum(int[][] isConnected) {
+        int n = isConnected.length;
+        boolean visited[] = new boolean[n];
+        int provinces = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                provinces += 1;
+                dfs(isConnected, i, visited, n);
+            }
+        }
+        return provinces;
+    }
+
+    public void dfs(int[][] isConnected, int city, boolean visited[], int n) {
+        visited[city] = true;
+        for (int neighbor = 0; neighbor < n; neighbor++) {
+            if (isConnected[city][neighbor] == 1 && !visited[neighbor]){
+                dfs(isConnected, neighbor, visited, n);
+            }
+        }
+    }
+    
+
+    // or if edges is provided
+    public int findNumberOfComponent(int V, List<List<Integer>> edges) {
+
+        // Step 1: Build adjacency list
+        List<List<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        for (List<Integer> edge : edges) {
+            int u = edge.get(0);
+            int v = edge.get(1);
+            adj.get(u).add(v);
+            adj.get(v).add(u); // undirected graph
+        }
+
+        // Step 2: DFS to count components
+        boolean[] visited = new boolean[V];
+        int components = 0;
+
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                components++;
+                dfs(i, adj, visited);
+            }
+        }
+
+        return components;
+    }
+
+    private void dfs(int node, List<List<Integer>> adj, boolean[] visited) {
+        visited[node] = true;
+        for (int neighbor : adj.get(node)) {
+            if (!visited[neighbor]) {
+                dfs(neighbor, adj, visited);
+            }
+        }
     }
 
     @SuppressWarnings("unchecked")
