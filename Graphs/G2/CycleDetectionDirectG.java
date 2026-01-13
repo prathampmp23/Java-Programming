@@ -29,9 +29,11 @@ public class CycleDetectionDirectG {
          *     /     |           
          *   3       |           
          *    ^      |
-         *     \    |
-         *      \  v
-         *        2
+         *     \     |
+         *      \    |
+         *       \   |
+         *        \  |
+         *         2
          * 
          */
         // store graph info

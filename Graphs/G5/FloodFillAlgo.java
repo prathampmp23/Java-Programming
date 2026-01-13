@@ -12,13 +12,13 @@ public class FloodFillAlgo {
         visited[sr][sc] = true;
         image[sr][sc] = color;
 
-        // left
+        // Move left
         helper(image, sr, sc - 1, color, visited, orgCol);
-        // right
+        // Move right
         helper(image, sr, sc + 1, color, visited, orgCol);
-        // up
+        // Move up
         helper(image, sr - 1, sc, color, visited, orgCol);
-        // down
+        // Move down
         helper(image, sr + 1, sc, color, visited, orgCol);
     }
 
@@ -26,6 +26,32 @@ public class FloodFillAlgo {
         boolean visited[][] = new boolean[image.length][image[0].length];
         helper(image, sr, sc, color, visited, image[sr][sc]);
         return image;
+    }
+
+    // ** Using DFS **
+    public void dfs(int row, int col, int ans[][], int image[][], int adjRow[], int adjCol[], int color, int iniColor) {
+
+        ans[row][col] = color;
+        int n = image.length;
+        int m = image[0].length;
+
+        for (int i = 0; i < 4; i++) {
+            int nRow = row + adjRow[i];
+            int nCol = col + adjCol[i];
+            if (nRow >= 0 && nRow < n && nCol >= 0 && nCol < m
+                    && image[nRow][nCol] == iniColor && ans[nRow][nCol] != color) {
+                dfs(nRow, nCol, ans, image, adjRow, adjCol, color, iniColor);
+            }
+        }
+    }
+
+    public int[][] floodFillAlgo(int[][] image, int sr, int sc, int color) {
+        int iniColor = image[sr][sc];
+        int ans[][] = image;
+        int adjRow[] = { -1, 0, +1, 0 };
+        int adjCol[] = { 0, +1, 0, -1 };
+        dfs(sr, sc, ans, image, adjRow, adjCol, color, iniColor);
+        return ans;
     }
 
     public static void main(String[] args) {
