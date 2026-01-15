@@ -1,6 +1,9 @@
 package Graphs.G2;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class CycleDetectionUndirectG {
     static class Edge {
@@ -95,6 +98,75 @@ public class CycleDetectionUndirectG {
         }
         return false;
     }
+
+    
+    // Using BFS
+    public boolean isCycle(int V, List<Integer>[] adj) {
+        boolean visited[] = new boolean[V];
+        for(int i =0;i<V; i++) {
+            if(!visited[i]) {
+                if(bfs(i, V, adj, visited)) return true;
+            }
+        }
+        return false;
+    }
+    static class Pair {
+        int node;
+        int parent;
+
+        public Pair(int node, int parent) {
+            this.node = node;
+            this.parent = parent;
+        }
+    }
+
+    public boolean bfs(int src, int V, List<Integer>[] adj, boolean visited[]) {
+        Queue<Pair> q = new LinkedList<>();
+        visited[src] = true;
+        q.add(new Pair(src, -1));
+
+        while (!q.isEmpty()) {
+            Pair p = q.poll();
+            int node = p.node;
+            int parent = p.parent;
+
+            for (int curr : adj[node]) {
+                if (!visited[curr]) {
+                    visited[curr] = true;
+                    q.add(new Pair(curr, node));
+                } else if (curr != parent) {
+                    return true; // cycle detected
+                }
+            }
+        }
+        return false;
+    }
+
+    // Using DFS
+    public boolean isCycle2(int V, List<Integer>[] adj) {
+        boolean visited[] = new boolean[V];
+        for(int i=0;i<V; i++) {
+            if(!visited[i]) {
+                if(dfs(i, -1, adj, visited)) return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean dfs(int node, int parent, List<Integer>[] adj, boolean visited[]) {
+        visited[node] = true;
+
+        for(int neighbour: adj[node]) {
+            if(!visited[neighbour]) {
+                if(dfs(neighbour, node, adj, visited) == true) {
+                    return true;
+                } 
+            }
+            else if(neighbour != parent) return true;
+        }
+        return false;
+    }
+
 
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
