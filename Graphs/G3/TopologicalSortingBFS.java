@@ -37,7 +37,7 @@ public class TopologicalSortingBFS {
 
     // O(V+E)
 
-    public static void claculateIndegree(ArrayList<Edge>[] graph, int indegree[]) {
+    public static void calculateIndegree(ArrayList<Edge>[] graph, int indegree[]) {
 
         for (int i = 0; i < graph.length; i++) {
             int v = i;
@@ -50,7 +50,7 @@ public class TopologicalSortingBFS {
 
     public static void topologicalSort(ArrayList<Edge>[] graph) {
         int indegree[] = new int[graph.length];
-        claculateIndegree(graph, indegree);
+        calculateIndegree(graph, indegree);
         Queue<Integer> q = new LinkedList<>();
 
         for (int i = 0; i < indegree.length; i++) {

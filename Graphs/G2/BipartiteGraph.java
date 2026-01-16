@@ -88,6 +88,20 @@ public class BipartiteGraph {
         return true;
     }
 
+    public boolean isBipartite(int[][] graph) {
+        ArrayList<Edge>[] adjGraph = new ArrayList[graph.length];
+
+        for(int i=0; i<graph.length; i++) {
+            adjGraph[i] = new ArrayList<>();
+        }
+        for(int i=0; i<graph.length; i++) {
+            for(int j=0; j<graph[i].length; j++) {
+                adjGraph[i].add(new Edge(i, graph[i][j]));
+            }
+        }
+        return isBiPartite(adjGraph);
+    }
+
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         int V = 5; // no of vertex
