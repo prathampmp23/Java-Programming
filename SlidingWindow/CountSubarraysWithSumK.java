@@ -19,9 +19,7 @@ public class CountSubarraysWithSumK {
         // Right pointer expands the window
         for (int right = 0; right < n; right++) {
 
-            // --------------------------------------------------
             // 1. Maintain MAX deque (monotonically decreasing)
-            // --------------------------------------------------
             // Remove all smaller elements from the back
             // because they can never be maximum again
             while (!maxDeque.isEmpty() && nums[maxDeque.peekLast()] <= nums[right]) {
@@ -31,9 +29,7 @@ public class CountSubarraysWithSumK {
             // Add current index
             maxDeque.offerLast(right);
 
-            // --------------------------------------------------
             // 2. Maintain MIN deque (monotonically increasing)
-            // --------------------------------------------------
             // Remove all larger elements from the back
             // because they can never be minimum again
             while (!minDeque.isEmpty() && nums[minDeque.peekLast()] >= nums[right]) {
@@ -43,9 +39,7 @@ public class CountSubarraysWithSumK {
             // Add current index
             minDeque.offerLast(right);
 
-            // --------------------------------------------------
             // 3. Shrink window while cost > k
-            // --------------------------------------------------
             while (!maxDeque.isEmpty() && !minDeque.isEmpty() &&
                     (long) (nums[maxDeque.peekFirst()] - nums[minDeque.peekFirst()]) * (right - left + 1) > k) {
 
@@ -63,9 +57,7 @@ public class CountSubarraysWithSumK {
                 left++;
             }
 
-            // --------------------------------------------------
             // 4. Count valid subarrays ending at 'right'
-            // --------------------------------------------------
             // All subarrays:
             // [left...right], [left+1...right], ..., [right...right]
             answer += (right - left + 1);
