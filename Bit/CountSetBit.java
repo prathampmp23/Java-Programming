@@ -14,5 +14,6 @@ public class CountSetBit {
 
     public static void main(String args[]) {
         System.out.println(CountBit(10));
+        System.out.println(Integer.bitCount(10));
     }
 }
