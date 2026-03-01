@@ -92,7 +92,7 @@ class Student {
     String password;
     int marks[];
 
-    // 1. Non Parameterized constructor
+    // 1. Non Parameterized constructor (Default Constructor)
     Student() {
         System.out.println("Non Parameterized constructor");
         marks = new int[3];
@@ -106,7 +106,7 @@ class Student {
 
     // 3. copy constructor
 
-    // shallow copy constructor (reflect changes)
+    // a. shallow copy constructor (reflect changes)
     // Student(Student s1) {
     // // to copy s1 properties
     // this.rollNo = s1.rollNo;
@@ -115,7 +115,7 @@ class Student {
     // this.marks = s1.marks; // pass references
     // }
 
-    // Deep copy constructor (not reflect changes)
+    // b. Deep copy constructor (not reflect changes)
     Student(Student s1) {
         // to copy s1 properties
         this.rollNo = s1.rollNo;
@@ -128,6 +128,7 @@ class Student {
 }
 
 // **** Encapsulation ****
+// private variables and getters and setters
 class Pen {
     private String color;
     private int tip;
