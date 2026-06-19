@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="95b2ded5-ec53-462d-86ff-e721d145bcd0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service2/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service2/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/src/main/java/com/example/demo/CommentsServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/src/main/java/com/example/demo/controller/CommentsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/src/main/java/com/example/demo/model/Comments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/src/main/java/com/example/demo/repository/CommentsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/src/main/java/com/example/demo/service/CommentsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/src/main/java/com/example/demo/service/CommentsServiceImp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service3/src/test/java/com/example/demo/CommentsServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/discovery-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/discovery-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/src/main/java/com/example/demo/GatewayServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth-service/src/test/java/com/example/demo/GatewayServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth/src/main/java/com/example/demo/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth/src/main/java/com/example/demo/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth/src/main/java/com/example/demo/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth/src/main/java/com/example/demo/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-auth/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/gateway-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application-uat.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application-uat.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="3EzhRPsi65DB7qbHtGQu6BDk0QO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Prath/Java/SocialHub/Backend",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95b2ded5-ec53-462d-86ff-e721d145bcd0" name="Changes" comment="" />
+      <created>1781187296916</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1781187296916</updated>
+    </task>
+    <servers />
+  </component>
+</project>
