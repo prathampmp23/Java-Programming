@@ -56,10 +56,6 @@ const HomePage = () => {
           left: "10%",
           width: "40vw",
           height: "40vw",
-          background:
-            "radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(255,255,255,0) 70%)",
-          zIndex: -1,
-          filter: "blur(50px)",
         }}
       />
       <Box
@@ -69,10 +65,6 @@ const HomePage = () => {
           right: "-5%",
           width: "50vw",
           height: "50vw",
-          background:
-            "radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, rgba(255,255,255,0) 70%)",
-          zIndex: -1,
-          filter: "blur(60px)",
         }}
       />
 
@@ -88,27 +80,6 @@ const HomePage = () => {
             textAlign: "center",
           }}
         >
-          {/* Top Pill Tag */}
-          <Box
-            sx={{
-              px: 2,
-              py: 0.75,
-              mb: 3,
-              borderRadius: "9999px",
-              background:
-                "linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%)",
-              border: "1px solid rgba(99, 102, 241, 0.2)",
-              display: "inline-flex",
-            }}
-          >
-            <Typography
-              variant="caption"
-              sx={{ fontWeight: 600, color: "#EC48990", letterSpacing: 1 }}
-            >
-              THE FUTURE OF SOCIALIZING
-            </Typography>
-          </Box>
-
           <Typography
             variant="h1"
             sx={{
@@ -169,7 +140,7 @@ const HomePage = () => {
                 fontWeight: 600,
                 px: 4,
                 py: 1.8,
-                borderRadius: 2.5,
+                borderRadius: 1,
                 textTransform: "none",
                 fontSize: "1rem",
                 transition: "all 0.2s ease-in-out",
@@ -196,7 +167,7 @@ const HomePage = () => {
                   fontWeight: 600,
                   px: 4,
                   py: 1.8,
-                  borderRadius: 2.5,
+                  borderRadius: 1,
                   textTransform: "none",
                   fontSize: "1rem",
                   backgroundColor: "rgba(255, 255, 255, 0.4)",
@@ -234,10 +205,10 @@ const HomePage = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" }, 
-            gap: 3, 
-            justifyContent: "center", 
-            alignItems: "stretch", 
+            flexDirection: { xs: "column", md: "row" },
+            gap: 3,
+            justifyContent: "center",
+            alignItems: "stretch",
             width: "100%",
           }}
         >
@@ -246,8 +217,8 @@ const HomePage = () => {
               key={index}
               elevation={0}
               sx={{
-                flex: { xs: "1 1 100%", md: "1 1 300px" }, 
-                borderRadius: 2, 
+                flex: { xs: "1 1 100%", md: "1 1 300px" },
+                borderRadius: 2,
                 border: "2px solid",
                 borderColor: "white",
                 background: feature.bg,

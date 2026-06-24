@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Button,
   TextField,
@@ -10,30 +10,30 @@ import {
   InputAdornment,
   IconButton,
   CircularProgress,
-} from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import { authService } from '../../services/api';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import LoginIcon from '@mui/icons-material/Login';
+} from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import { authService } from "../../services/api";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import LoginIcon from "@mui/icons-material/Login";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setLoading(true);
 
     if (!username.trim() || !password.trim()) {
-      setError('Please fill in all fields');
+      setError("Please fill in all fields");
       setLoading(false);
       return;
     }
@@ -42,10 +42,12 @@ const LoginPage = () => {
       const response = await authService.login(username, password);
       const token = response.data;
       login(username, token);
-      navigate('/posts');
+      navigate("/posts");
     } catch (err) {
-      console.error('Login error:', err);
-      setError(err.response?.data?.message || 'Login failed. Please try again.');
+      console.error("Login error:", err);
+      setError(
+        err.response?.data?.message || "Login failed. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -57,40 +59,41 @@ const LoginPage = () => {
 
   return (
     <Container component="main" maxWidth="sm">
-      <Box sx={{ minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ minHeight: "60vh", display: "flex", alignItems: "center" }}>
         <Paper
           elevation={0}
           sx={{
-            width: '100%',
+            width: "100%",
             padding: { xs: 3, sm: 4 },
             borderRadius: 2,
-            backdropFilter: 'blur(20px)',
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%)',
-            border: '1px solid rgba(255, 255, 255, 0.18)',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            backdropFilter: "blur(20px)",
+            background:
+              "linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%)",
+            border: "1px solid rgba(255, 255, 255, 0.18)",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
           }}
         >
           <Box
             sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
             <Box
               sx={{
                 width: 56,
                 height: 56,
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #6366F1 0%, #818CF8 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #6366F1 0%, #818CF8 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 mb: 2,
-                boxShadow: '0 4px 16px rgba(99, 102, 241, 0.3)',
+                boxShadow: "0 4px 16px rgba(99, 102, 241, 0.3)",
               }}
             >
-              <LoginIcon sx={{ color: 'white', fontSize: 32 }} />
+              <LoginIcon sx={{ color: "white", fontSize: 32 }} />
             </Box>
             <Typography
               component="h1"
@@ -98,25 +101,37 @@ const LoginPage = () => {
               sx={{
                 fontWeight: 800,
                 mb: 1,
-                background: 'linear-gradient(135deg, #6366F1 0%, #EC4899 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
+                background: "black",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
               }}
             >
               Welcome Back
             </Typography>
-            <Typography variant="body2" color="textSecondary" sx={{ mb: 3, opacity: 0.7 }}>
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              sx={{ mb: 3, opacity: 0.7 }}
+            >
               Sign in to your SocialHub account
             </Typography>
 
             {error && (
-              <Alert severity="error" sx={{ width: '100%', mb: 2 }} onClose={() => setError('')}>
+              <Alert
+                severity="error"
+                sx={{ width: "100%", mb: 2 }}
+                onClose={() => setError("")}
+              >
                 {error}
               </Alert>
             )}
 
-            <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%' }}>
+            <Box
+              component="form"
+              onSubmit={handleSubmit}
+              sx={{ width: "100%" }}
+            >
               <TextField
                 margin="normal"
                 required
@@ -136,7 +151,7 @@ const LoginPage = () => {
                 fullWidth
                 name="password"
                 label="Password"
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 id="password"
                 autoComplete="current-password"
                 value={password}
@@ -165,27 +180,27 @@ const LoginPage = () => {
                   mt: 3,
                   mb: 2,
                   py: 1.5,
-                  background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(236, 72, 153, 0.6) 100%)',
+                  background: "black",
                   fontWeight: 700,
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.18)',
-                  '&:hover': {
-                    background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(236, 72, 153, 0.7) 100%)',
+                  backdropFilter: "blur(10px)",
+                  border: "1px solid rgba(255, 255, 255, 0.18)",
+                  "&:hover": {
+                    background: "black",
                   },
                 }}
                 disabled={loading}
               >
-                {loading ? <CircularProgress size={24} /> : 'Sign In'}
+                {loading ? <CircularProgress size={24} /> : "Sign In"}
               </Button>
 
-              <Box sx={{ textAlign: 'center' }}>
+              <Box sx={{ textAlign: "center" }}>
                 <Typography variant="body2" sx={{ opacity: 0.7 }}>
-                  Don't have an account?{' '}
+                  Don't have an account?{" "}
                   <Link
                     to="/register"
                     style={{
-                      textDecoration: 'none',
-                      color: '#6366F1',
+                      textDecoration: "none",
+                      color: "#6366F1",
                       fontWeight: 700,
                     }}
                   >
