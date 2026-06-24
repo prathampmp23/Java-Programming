@@ -246,18 +246,16 @@ const HomePage = () => {
               key={index}
               elevation={0}
               sx={{
-                flex: { xs: "1 1 100%", md: "1 1 300px" }, // Tells cards how to dynamically flex
-                borderRadius: 3, 
-                border: "1px solid",
+                flex: { xs: "1 1 100%", md: "1 1 300px" }, 
+                borderRadius: 2, 
+                border: "2px solid",
                 borderColor: "white",
                 background: feature.bg,
                 backdropFilter: "blur(8px)",
                 position: "relative",
                 overflow: "hidden",
-                transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
                 "&:hover": {
                   transform: "translateY(-6px)",
-                  boxShadow: "0 20px 40px rgba(0,,0,0.04)",
                   "& .feature-icon-box": {
                     transform: "scale(1.05)",
                   },

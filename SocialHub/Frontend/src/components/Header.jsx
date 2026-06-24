@@ -40,10 +40,10 @@ const Header = () => {
       position="sticky"
       elevation={0}
       sx={{
-        backdropFilter: "blur(20px)",
+        backdropFilter: "blur(5px)",
         background:
-          "linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(236, 72, 153, 0.1) 100%)",
-        border: "1px solid rgba(255, 255, 255, 0.18)",
+          "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 100%)",
+        border: "0px solid rgba(255, 255, 255, 0.18)",
         boxShadow: "0 8px 32px rgba(0, 0, 0, 0.08)",
       }}
     >
@@ -54,7 +54,7 @@ const Header = () => {
           to="/"
           sx={{
             fontWeight: 800,
-            color: "#EC48990",
+            color: "#000000",
             textDecoration: "none",
             display: "flex",
             alignItems: "center",
@@ -73,7 +73,7 @@ const Header = () => {
               startIcon={<HomeIcon />}
               sx={{
                 fontWeight: 600,
-                color: "#EC48990",
+                color: "#000000",
                 "&:hover": {
                   background: "rgba(0, 0, 0, 0.05)",
                 },
@@ -88,7 +88,7 @@ const Header = () => {
               startIcon={<ArticleIcon />}
               sx={{
                 fontWeight: 600,
-                color: "#EC48990",
+                color: "#000000",
                 "&:hover": {
                   background: "rgba(0, 0, 0, 0.05)",
                 },
@@ -103,7 +103,7 @@ const Header = () => {
               <Typography
                 variant="body2"
                 sx={{
-                  color: "#EC48990",
+                  color: "#000000",
                   fontWeight: 600,
                 }}
               >
@@ -157,8 +157,8 @@ const Header = () => {
                 to="/login"
                 variant="outlined"
                 sx={{
-                  borderColor: "#EC48990",
-                  color: "#EC48990",
+                  borderColor: "#000000",
+                  color: "#000000",
                   fontWeight: 600,
                 }}
               >
@@ -170,11 +170,11 @@ const Header = () => {
                 to="/register"
                 variant="contained"
                 sx={{
-                  background: "#EC48990",
+                  background: "#000000",
                   color: "white",
                   fontWeight: 600,
                   "&:hover": {
-                    background: "#333333",
+                    background: "#101010",
                   },
                 }}
               >
