@@ -88,7 +88,7 @@ const HomePage = () => {
               lineHeight: 1.15,
               mb: 3,
               letterSpacing: "-0.02em",
-              background: "linear-gradient(135deg, #111827 30%, #4F46E5 100%)",
+              background: "linear-gradient(135deg, #111827 30%, #04938c 100%)",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",

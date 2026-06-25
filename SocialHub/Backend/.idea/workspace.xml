@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="95b2ded5-ec53-462d-86ff-e721d145bcd0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/comments-service/pom.xml" afterDir="false" />
@@ -40,6 +43,9 @@
       <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application-dev.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application-uat.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application-uat.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Microservice-main/Microservices/posts-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/HomePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +55,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="3EzhRPsi65DB7qbHtGQu6BDk0QO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -59,15 +65,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.DiscoveryServiceApplication.executor": "Run",
+    "Application.PostsServiceApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHELLCHECK.PATH": "I do mind",
+    "Shell Script.mvnw.executor": "Run",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Prath/Java/SocialHub/Backend",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
