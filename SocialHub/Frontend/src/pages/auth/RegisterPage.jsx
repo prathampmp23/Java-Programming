@@ -33,7 +33,6 @@ const RegisterPage = () => {
     if (!username.trim()) return "Username is required";
     if (!password.trim()) return "Password is required";
     if (password.length < 6) return "Password must be at least 6 characters";
-    if (password !== role) return "Passwords do not match";
     return "";
   };
 
