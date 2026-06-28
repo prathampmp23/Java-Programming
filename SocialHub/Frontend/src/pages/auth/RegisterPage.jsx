@@ -49,9 +49,9 @@ const RegisterPage = () => {
 
     try {
       const response = await authService.register(username, password, role);
-      const token = response.data;
-      login(username, token);
-      navigate("/posts");
+      // const token = response.data;
+      // login(username, token);
+      navigate("/login");
     } catch (err) {
       console.error("Registration error:", err);
       setError(
