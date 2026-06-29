@@ -15,6 +15,7 @@ import { useAuth } from "../context/AuthContext";
 import HomeIcon from "@mui/icons-material/Home";
 import ArticleIcon from "@mui/icons-material/Article";
 import LogoutIcon from "@mui/icons-material/Logout";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const Header = () => {
   const { user, token, logout } = useAuth();
@@ -23,6 +24,7 @@ const Header = () => {
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
+    console.log(user);
   };
 
   const handleMenuClose = () => {
@@ -54,7 +56,11 @@ const Header = () => {
           to="/"
           sx={{
             fontWeight: 800,
-            color: "#000000",
+            background:
+              "linear-gradient(135deg, #111827 10%, #00ffee 40%, #00053b 100%)",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
             textDecoration: "none",
             display: "flex",
             alignItems: "center",
@@ -65,38 +71,40 @@ const Header = () => {
         </Typography>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-          <Box sx={{ display: "flex", gap: 1 }}>
-            <Button
-              color="inherit"
-              component={Link}
-              to="/"
-              startIcon={<HomeIcon />}
-              sx={{
-                fontWeight: 600,
-                color: "#000000",
-                "&:hover": {
-                  background: "rgba(0, 0, 0, 0.05)",
-                },
-              }}
-            >
-              Home
-            </Button>
-            <Button
-              color="inherit"
-              component={Link}
-              to="/posts"
-              startIcon={<ArticleIcon />}
-              sx={{
-                fontWeight: 600,
-                color: "#000000",
-                "&:hover": {
-                  background: "rgba(0, 0, 0, 0.05)",
-                },
-              }}
-            >
-              Posts
-            </Button>
-          </Box>
+          {token && (
+            <Box sx={{ display: "flex", gap: 1 }}>
+              <Button
+                color="inherit"
+                component={Link}
+                to="/"
+                startIcon={<HomeIcon />}
+                sx={{
+                  fontWeight: 600,
+                  color: "#000000",
+                  "&:hover": {
+                    background: "rgba(0, 0, 0, 0.05)",
+                  },
+                }}
+              >
+                Home
+              </Button>
+              <Button
+                color="inherit"
+                component={Link}
+                to="/posts"
+                startIcon={<ArticleIcon />}
+                sx={{
+                  fontWeight: 600,
+                  color: "#000000",
+                  "&:hover": {
+                    background: "rgba(0, 0, 0, 0.05)",
+                  },
+                }}
+              >
+                Posts
+              </Button>
+            </Box>
+          )}
 
           {token ? (
             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -107,12 +115,12 @@ const Header = () => {
                   fontWeight: 600,
                 }}
               >
-                {user}
+                {/* {user} */}
               </Typography>
               <Avatar
                 sx={{
                   cursor: "pointer",
-                  background: "#999999",
+                  background: "#fcfcfc",
                   fontWeight: 700,
                   boxShadow: "0 4px 16px rgba(0, 0, 0, 0.2)",
                   transition: "all 0.3s ease",
@@ -123,7 +131,7 @@ const Header = () => {
                 }}
                 onClick={handleMenuOpen}
               >
-                {user ? user.charAt(0).toUpperCase() : "U"}
+                <AccountCircleIcon sx={{ color: "black", fontSize: 32 }} />
               </Avatar>
               <Menu
                 anchorEl={anchorEl}
@@ -139,7 +147,9 @@ const Header = () => {
                   },
                 }}
               >
-                <MenuItem disabled>{user}</MenuItem>
+                <MenuItem disabled>
+                  <b>{user}</b>
+                </MenuItem>
                 <Divider sx={{ opacity: 0.2 }} />
                 <MenuItem
                   onClick={handleLogout}

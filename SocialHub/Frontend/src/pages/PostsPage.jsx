@@ -98,7 +98,7 @@ const PostsPage = () => {
           sx={{
             fontWeight: 800,
             mb: 1,
-            background: 'linear-gradient(135deg, #6366F1 0%, #EC4899 100%)',
+            background: 'linear-gradient(180deg, #009a97 50%, #000000 100%)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -130,8 +130,8 @@ const PostsPage = () => {
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
           }}
         >
-          <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: '#6366F1' }}>
-            ✍️ Create a new post
+          <Typography variant="h6" sx={{ fontWeight: 700, mb: 3, color: '#008f86' }}>
+            Create a new post
           </Typography>
           <TextField
             fullWidth
@@ -159,7 +159,7 @@ const PostsPage = () => {
             disabled={creating}
             startIcon={<CreateIcon />}
             sx={{
-              background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.8) 0%, rgba(236, 72, 153, 0.6) 100%)',
+              background: 'linear-gradient(135deg, #00ffee 0%, #000b85) 100%)',
               fontWeight: 700,
               backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255, 255, 255, 0.18)',
@@ -215,7 +215,7 @@ const PostsPage = () => {
                   <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                     <Avatar
                       sx={{
-                        background: 'linear-gradient(135deg, #6366F1 0%, #EC4899 100%)',
+                        background: 'linear-gradient(135deg, #00ffee 0%, #000b85 100%)',
                         mr: 2,
                         boxShadow: '0 4px 12px rgba(99, 102, 241, 0.2)',
                       }}
@@ -223,7 +223,7 @@ const PostsPage = () => {
                       {post.author ? post.author.charAt(0).toUpperCase() : 'A'}
                     </Avatar>
                     <Box>
-                      <Typography variant="caption" sx={{ fontWeight: 700, color: '#6366F1' }}>
+                      <Typography variant="caption" sx={{ fontWeight: 700, color: '#008f86' }}>
                         {post.author || 'Anonymous'}
                       </Typography>
                       <Typography variant="caption" color="textSecondary" display="block" sx={{ opacity: 0.7 }}>
@@ -250,7 +250,7 @@ const PostsPage = () => {
                     to={`/comments/${post.postid || post.id}`}
                     startIcon={<CommentIcon />}
                     sx={{
-                      color: '#6366F1',
+                      color: '#008f86',
                       fontWeight: 600,
                     }}
                   >

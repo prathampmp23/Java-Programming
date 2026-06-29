@@ -12,11 +12,11 @@ const api = axios.create({
 // Add token to headers if it exists
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
-  console.log("TOKEN:", token);
+  // console.log("TOKEN:", token);
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
-  console.log(config.headers);
+  // console.log(config.headers);
   return config;
 });
 
@@ -25,8 +25,8 @@ export const authService = {
   login: (username, password) => {
     return api.post("/auth/login", { username, password });
   },
-  register: (username, password, email) => {
-    return api.post("/auth/register", { username, password, email });
+  register: (username, password, role) => {
+    return api.post("/auth/register", { username, password, role });
   },
 };
 
