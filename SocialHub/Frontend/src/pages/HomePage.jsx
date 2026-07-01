@@ -78,6 +78,7 @@ const HomePage = () => {
             flexDirection: "column",
             alignItems: "center",
             textAlign: "center",
+            
           }}
         >
           <Typography

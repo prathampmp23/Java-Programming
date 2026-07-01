@@ -70,7 +70,7 @@ const LoginPage = () => {
             background:
               "linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%)",
             border: "1px solid rgba(255, 255, 255, 0.18)",
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
+            boxShadow: "z0 8px 32px rgba(0, 0, 0, 0.1)",
           }}
         >
           <Box
