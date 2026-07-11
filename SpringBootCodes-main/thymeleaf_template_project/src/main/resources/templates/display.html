@@ -1,0 +1,24 @@
+<html>
+
+<body>
+	<h2>Bikes List</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Bike ID</th>
+				<th>Make </th>
+				<th>Model </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="bike : ${bikes}">
+				<td th:text="${bike.bikeid}"></td>
+				<td th:text="${bike.make}"></td>
+				<td th:text="${bike.model}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<a href="/">Home</a>
+</body>
+
+</html>
