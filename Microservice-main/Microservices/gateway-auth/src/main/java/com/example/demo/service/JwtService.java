@@ -6,21 +6,22 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
 @Service
 public class JwtService {
     private static final String SECRET_KEY = "X9aB7cQmP4tR2vL8wZ6yN0kD3fH5jG1uE7oS4nM2bV9rT8qC5xJ";
  
-//    public String generateToken(UserDetails userDetails) {
-//        return Jwts.builder()
-//                .setSubject(userDetails.getUsername())
-//                .claim("role", userDetails.getAuthorities().toString())
-//                .setIssuedAt(new Date())
-//                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) // 1 hour
-//                .signWith(Keys.hmacShaKeyFor(SECRET_KEY.getBytes()), SignatureAlgorithm.HS256)
-//                .compact();
-//    }
+    public String generateToken(UserDetails userDetails) {
+        return Jwts.builder()
+                .setSubject(userDetails.getUsername())
+                .claim("role", userDetails.getAuthorities().toString())
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) // 1 hour
+                .signWith(Keys.hmacShaKeyFor(SECRET_KEY.getBytes()), SignatureAlgorithm.HS256)
+                .compact();
+    }
  
     public String extractUsername(String token) {
         return Jwts.parserBuilder()

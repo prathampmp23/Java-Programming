@@ -6,14 +6,18 @@ spring:
       server:
         webmvc:
           routes:
-           - id: POST-SERVICE
-             uri: lb://POST-SERVICE
+           - id: POSTS-SERVICE
+             uri: lb://POSTS-SERVICE
              predicates:
                - Path=/api/posts/**
            - id: COMMENTS-SERVICE
              uri: lb://COMMENTS-SERVICE
              predicates:
-               - Path=/api/comments/**						 
+               - Path=/api/comments/**
+           - id: IDENTITY-SERVICE
+             uri: lb://IDENTITY-SERVICE
+             predicates:
+               - Path=/auth/**						 
 server:
   port: 8765
   
