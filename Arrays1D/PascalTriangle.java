@@ -27,9 +27,14 @@ public class PascalTriangle {
     public static void main(String[] args) {
         int numRows = 5;
         List<List<Integer>> result = generate(numRows);
-
+        
         System.out.println("Pascal's Triangle with " + numRows + " rows:");
+        int space = numRows;
         for (List<Integer> row : result) {
+            for(int i=0; i<space; i++) {
+                System.out.print("  ");
+            }
+            space--;
             System.out.println(row);
         }
     }

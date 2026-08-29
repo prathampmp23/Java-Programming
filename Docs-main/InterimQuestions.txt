@@ -1,0 +1,110 @@
+1. How to interact with third party api
+2. Occurance of a character in a given string
+3. check whether string is anagaram or not
+4. HashMap and concurrent HashMap
+5. How to map list or map into synchronized one.
+6. How can you stablize map or list in multi threading environment
+7. diff Synchronized list and Asynchronous Map 
+8. What are diff scopes in Spring
+9. What is Global Scope in Spring bean
+10. diff between  BeanFactory and ApplicationContext
+11. Idempotenet and Safe Request
+12. Diff between Microservices an Monolithic arch
+13. What is load Balancing
+14. What is Circuit Breaker
+15. Advantages of Springboot
+16. How to change the server port number
+17. What is Actuator
+18. What are diff end points in Actuator
+19. Hibenate Advantages
+20. Diff between Hibernate and JPA
+21. Throws, Throw and Throwable diff
+22. Caching in hibernate
+23. what is Lazy Loading in Hibernate
+24. How to find the second highest salary of emp using streams
+25. What are final, finally and Finalize 
+26. What are Intermediate and Terminal methods in streams
+27. what are diff between List and Set
+28. What are Sequential and parallel Streams
+29. Can we use synchronized block for primitive types?
+
+
+
+1. What are static objects
+2. Accessing third party url
+3. How many scopes are available in spring
+4. What are various ways to connect to database in springboot
+5. Are their any disadvantages with springboot
+6. can we create standalone application using springboot
+7. What are intermediate and terminal operations in streams
+8. Diff between Thread and Runnable
+9. What is Data Structures
+10. Program to count the occurence of characters in the given string
+11. How to reverse a string without using pre defined methods
+12. What are diff between Override and Overloading
+13. Can we Override the static methods in a class and in a interface
+14. What is diff between compile time and runtime excetions
+15. What are methods available in object class
+16. in which package object is present
+17. What are the classes in util package
+18. Diff between Collection interface and Collections class
+19. diff between HashMap and concurrent HashMap, when to choose each of them
+
+
+1. What are scopes in bean explain each of them in detail
+2. What is Spring Context
+3. What is use of @PathVariable, @RequestMapping, @RequestBody and @RequestParam
+4. What is @Component and @Bean
+5. What is the default server in Springboot, what other servers can be supported and how to
+   change the server
+
+6. How do you handle the exceptions in springboot
+7. what is @SpringbootApplication use ?
+8. How @AutoConfiguration works and how to exclude any configuration
+9. In the rest controller why we need to return response body as return type why not just strintg
+
+
+1. What is @RestController and @Controller
+2. What is the default return type in @RestController
+3. How do you return xml from a rest api?
+4. What are consumes and produces in rest api
+5. what happens if we write @Service vs if we don't annotate
+6. Without any annotation how can you make a class work in Spring
+7. What is @Qualifier and @Primary
+8. What is SpringContext
+9. What are diff between REST and SOAP
+10. What is JVM
+11. What are diff bean scopes 
+12. How does auto configuration work in springboot
+13. What @PathVariable
+14. What does @PathVariable return
+15. How are exceptions are handled in Springboot
+
+
+1. what are OOPS concepts in Java
+2. What is polymorphism
+3. Diff between method overloading and overriding
+4. use of static keyword
+5. Types of access modifiers in java
+6. Java8 features
+7. what are collections
+8. what is collection interfae
+9. what is spring framework
+10. what is IoC and DI
+11. What are the imp annotations in Springboot
+12. What is the first annotation executes in main class in springboot
+13. what is use of @ComponentScan
+14. What annotations used in Controller class
+15. diff between @Controller aned @RestController
+16. Which annotation methods are used for CRUD operations
+17. How to handle Validations 
+18. What are stero type annotations
+19. Layered arch in Spring
+20. What annotatioin to be used in JPA to rep table
+21. What is @Id
+22. What is the use of application.properties
+23. what does pom.xml contains
+24. What is use of @ExceptionHandler and @ControllerAdvice
+25. What are microservices advantages and disadvantages
+26. Write a program to check prime number
+
