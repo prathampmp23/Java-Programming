@@ -28,20 +28,23 @@ public class Sort0s1s2sArray {
     }
 
     // Optimal O(N)
+    // Dutch National Flag algorithm (3 pointers)
     public static void sort0s1s2sArray2(int nums[]) {
-        int low = 0;
-        int mid = 0;
-        int high = nums.length - 1;
+        int low = 0; // track 0
+        int mid = 0; // tracl 1
+        int high = nums.length - 1; // track 2
         while (mid <= high) {
             if (nums[mid] == 0) {
+                // swap low and mid
                 int temp = nums[low];
                 nums[low] = nums[mid];
                 nums[mid] = temp;
-                mid++;
+                mid++; 
                 low++;
             } else if (nums[mid] == 1) {
-                mid++;
+                mid++; // move mid forward
             } else {
+                // swap mid and high
                 int temp = nums[mid];
                 nums[mid] = nums[high];
                 nums[high] = temp;
